@@ -145,6 +145,13 @@ namespace manganosekai
             return cConexao.RetornaDados(sql);
 
          }
+        public DataTable consultarClienteVenda(string nome)
+        {
+            string sql = $"SELECT cod_cliente as Código, nome AS Nome, cpf AS CPF from cliente WHERE nome LIKE '%{nome}%' and status = 1 ORDER BY nome";
+
+            classConexao cConexao = new classConexao();
+            return cConexao.RetornaDados(sql);
+        }
         
         public bool dadoscliente(int cod)
         {

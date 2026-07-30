@@ -34,7 +34,6 @@ namespace manganosekai
             this.pnTituloFuncionario = new System.Windows.Forms.Panel();
             this.btSair = new System.Windows.Forms.Button();
             this.lbTitulo = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.gbConsFuncionario = new System.Windows.Forms.GroupBox();
             this.gbdatacadastro = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@ namespace manganosekai
             this.pnTituloFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
             this.pnTituloFuncionario.Controls.Add(this.btSair);
             this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
-            this.pnTituloFuncionario.Controls.Add(this.label10);
             this.pnTituloFuncionario.Location = new System.Drawing.Point(0, -3);
             this.pnTituloFuncionario.Name = "pnTituloFuncionario";
             this.pnTituloFuncionario.Size = new System.Drawing.Size(1153, 53);
@@ -94,18 +92,6 @@ namespace manganosekai
             this.lbTitulo.Size = new System.Drawing.Size(191, 29);
             this.lbTitulo.TabIndex = 65;
             this.lbTitulo.Text = "Consulta de autor";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(572, 19);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(426, 23);
-            this.label10.TabIndex = 100;
-            this.label10.Text = "Para alterar ou excluir  um autor, selecione na grid!!!";
             // 
             // gbConsFuncionario
             // 
@@ -342,7 +328,6 @@ namespace manganosekai
         private System.Windows.Forms.Panel pnTituloFuncionario;
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox gbConsFuncionario;
         public System.Windows.Forms.GroupBox gbdatacadastro;
         private System.Windows.Forms.Label label8;

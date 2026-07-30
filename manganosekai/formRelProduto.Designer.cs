@@ -32,6 +32,7 @@ namespace manganosekai
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formRelProduto));
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.classProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btSair = new System.Windows.Forms.Button();
             this.gbTipoRel = new System.Windows.Forms.GroupBox();
             this.cbTipoRel = new System.Windows.Forms.ComboBox();
@@ -63,8 +64,8 @@ namespace manganosekai
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.classProdutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.classFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.classProdutoBindingSource)).BeginInit();
             this.gbTipoRel.SuspendLayout();
             this.gbCategoria.SuspendLayout();
             this.gbPrecoVenda.SuspendLayout();
@@ -74,9 +75,12 @@ namespace manganosekai
             this.gbStatus.SuspendLayout();
             this.pnTituloFuncionario.SuspendLayout();
             this.gbDataLancamento.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.classProdutoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classFuncionarioBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // classProdutoBindingSource
+            // 
+            this.classProdutoBindingSource.DataSource = typeof(manganosekai.classProduto);
             // 
             // btSair
             // 
@@ -340,7 +344,7 @@ namespace manganosekai
             // 
             // pnTituloFuncionario
             // 
-            this.pnTituloFuncionario.BackColor = System.Drawing.Color.Gold;
+            this.pnTituloFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
             this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
             this.pnTituloFuncionario.Location = new System.Drawing.Point(0, 0);
             this.pnTituloFuncionario.Name = "pnTituloFuncionario";
@@ -422,10 +426,6 @@ namespace manganosekai
             this.reportViewer.Size = new System.Drawing.Size(666, 698);
             this.reportViewer.TabIndex = 147;
             // 
-            // classProdutoBindingSource
-            // 
-            this.classProdutoBindingSource.DataSource = typeof(manganosekai.classProduto);
-            // 
             // classFuncionarioBindingSource
             // 
             this.classFuncionarioBindingSource.DataSource = typeof(manganosekai.classFuncionario);
@@ -452,6 +452,7 @@ namespace manganosekai
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formRelProduto";
             this.Load += new System.EventHandler(this.formRelProduto_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.classProdutoBindingSource)).EndInit();
             this.gbTipoRel.ResumeLayout(false);
             this.gbCategoria.ResumeLayout(false);
             this.gbPrecoVenda.ResumeLayout(false);
@@ -466,7 +467,6 @@ namespace manganosekai
             this.pnTituloFuncionario.PerformLayout();
             this.gbDataLancamento.ResumeLayout(false);
             this.gbDataLancamento.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.classProdutoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classFuncionarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -162,6 +162,7 @@ namespace manganosekai
             this.btBuscaCliente.Size = new System.Drawing.Size(44, 42);
             this.btBuscaCliente.TabIndex = 3;
             this.btBuscaCliente.UseVisualStyleBackColor = true;
+            this.btBuscaCliente.Click += new System.EventHandler(this.btBuscaCliente_Click);
             // 
             // txtTotalVenda
             // 
@@ -269,7 +270,6 @@ namespace manganosekai
             // 
             this.dgvProduto.AllowUserToAddRows = false;
             this.dgvProduto.AllowUserToDeleteRows = false;
-            this.dgvProduto.AllowUserToResizeColumns = false;
             this.dgvProduto.AllowUserToResizeRows = false;
             this.dgvProduto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduto.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -285,6 +285,7 @@ namespace manganosekai
             this.dgvProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduto.Size = new System.Drawing.Size(499, 212);
             this.dgvProduto.TabIndex = 0;
+            this.dgvProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellClick);
             // 
             // txtPesqProduto
             // 
@@ -304,6 +305,7 @@ namespace manganosekai
             this.btBuscaProduto.Size = new System.Drawing.Size(44, 42);
             this.btBuscaProduto.TabIndex = 3;
             this.btBuscaProduto.UseVisualStyleBackColor = true;
+            this.btBuscaProduto.Click += new System.EventHandler(this.btBuscaProduto_Click);
             // 
             // btFechaVenda
             // 
@@ -438,6 +440,7 @@ namespace manganosekai
             this.txtQtde.Name = "txtQtde";
             this.txtQtde.Size = new System.Drawing.Size(95, 27);
             this.txtQtde.TabIndex = 199;
+            this.txtQtde.TextChanged += new System.EventHandler(this.txtQtde_TextChanged);
             // 
             // label4
             // 
@@ -497,6 +500,7 @@ namespace manganosekai
             // 
             // pnTituloVenda
             // 
+            this.pnTituloVenda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
             this.pnTituloVenda.Controls.Add(this.btSair);
             this.pnTituloVenda.Controls.Add(this.lbTitulo);
             this.pnTituloVenda.Location = new System.Drawing.Point(0, -1);
@@ -522,12 +526,13 @@ namespace manganosekai
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(405, 8);
+            this.lbTitulo.Location = new System.Drawing.Point(381, 10);
             this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(324, 36);
+            this.lbTitulo.Size = new System.Drawing.Size(325, 36);
             this.lbTitulo.TabIndex = 65;
-            this.lbTitulo.Text = "Venda  -  Loja Cosméticos";
+            this.lbTitulo.Text = "Venda  -  Mangá No Sekai";
+            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // gbFuncionario
             // 

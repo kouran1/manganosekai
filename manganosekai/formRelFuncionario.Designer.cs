@@ -330,7 +330,7 @@
             // 
             // pnTituloFuncionario
             // 
-            this.pnTituloFuncionario.BackColor = System.Drawing.Color.Gold;
+            this.pnTituloFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
             this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
             this.pnTituloFuncionario.Location = new System.Drawing.Point(0, 0);
             this.pnTituloFuncionario.Name = "pnTituloFuncionario";
