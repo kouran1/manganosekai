@@ -16,6 +16,8 @@ namespace manganosekai
         {
             InitializeComponent();
             lbdatacadastro.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            tbcargo.MaxLength = 40;
+            tbobservacao.MaxLength = 100;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -25,7 +27,10 @@ namespace manganosekai
 
         private void btvoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         public string tipo;
@@ -54,7 +59,7 @@ namespace manganosekai
 
                 if(resp == 1)
                 {
-                    MessageBox.Show($"Cargo: {cCargo.nome} Cadastrado com sucesso", "Manga no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Cargo: {cCargo.nome} cadastrado com sucesso", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbcargo.Clear();
                     tbobservacao.Clear();
                     tbcargo.Focus();
@@ -69,12 +74,38 @@ namespace manganosekai
 
 
         }
+        public Point downPoint = Point.Empty;
+        protected override void OnLoad(EventArgs e)
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+            {
+                MouseDown += new MouseEventHandler(Form_MouseDown);
+                MouseMove += new MouseEventHandler(Form_MouseMove);
+                MouseUp += new MouseEventHandler(Form_MouseUp);
+            }
+            base.OnLoad(e);
+        }
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+        private void Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            downPoint = Point.Empty;
+        }
+
 
         private void fmccargo_Load(object sender, EventArgs e)
         {
             if (tipo == "Atualização")
             {
-                lbtitulo.Text = "Atualização de funcionario";
+                toolStripStatusLabel1.Text = "Atualização de funcionario";
 
                 gboxsituacao.Enabled = true;
                 btcadastrar.Enabled = false;
@@ -105,7 +136,7 @@ namespace manganosekai
 
                 cCargo.nome = tbcargo.Text;
 
-                if(rbativo.Checked = true)
+                if(rbativo.Checked == true)
                 {
                     cCargo.status = 1;
                 }
@@ -151,7 +182,7 @@ namespace manganosekai
                 int resp = cCargo.deletarcargo();
                 if (resp == 1)
                 {
-                    MessageBox.Show("Cargo excluido com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Cargo excluído com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
                 }
                 else

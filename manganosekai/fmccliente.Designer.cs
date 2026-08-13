@@ -1,4 +1,4 @@
-﻿
+
 namespace manganosekai
 {
     partial class fmccliente
@@ -48,7 +48,7 @@ namespace manganosekai
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.mtboxcpf = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.mtbdatanascimento = new System.Windows.Forms.MaskedTextBox();
+            this.dtpnascimento = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbnomesocial = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -117,8 +117,8 @@ namespace manganosekai
             this.groupBox17.Controls.Add(this.groupBox2);
             this.groupBox17.Controls.Add(this.gboxsituacao);
             this.groupBox17.Controls.Add(this.groupBox1);
-            this.groupBox17.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(34, 66);
+            this.groupBox17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(22, 40);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(537, 294);
             this.groupBox17.TabIndex = 11;
@@ -128,10 +128,10 @@ namespace manganosekai
             // groupBox26
             // 
             this.groupBox26.Controls.Add(this.lbdatacadastro);
-            this.groupBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox26.Location = new System.Drawing.Point(383, 32);
             this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(136, 48);
+            this.groupBox26.Size = new System.Drawing.Size(143, 48);
             this.groupBox26.TabIndex = 3;
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Data de cadastro";
@@ -139,20 +139,20 @@ namespace manganosekai
             // lbdatacadastro
             // 
             this.lbdatacadastro.AutoSize = true;
-            this.lbdatacadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdatacadastro.Location = new System.Drawing.Point(6, 23);
+            this.lbdatacadastro.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdatacadastro.Location = new System.Drawing.Point(6, 22);
             this.lbdatacadastro.Name = "lbdatacadastro";
-            this.lbdatacadastro.Size = new System.Drawing.Size(30, 13);
+            this.lbdatacadastro.Size = new System.Drawing.Size(35, 16);
             this.lbdatacadastro.TabIndex = 0;
             this.lbdatacadastro.Text = "Data";
             // 
             // groupBox22
             // 
             this.groupBox22.Controls.Add(this.tbemail);
-            this.groupBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox22.Location = new System.Drawing.Point(276, 236);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(245, 46);
+            this.groupBox22.Size = new System.Drawing.Size(250, 46);
             this.groupBox22.TabIndex = 14;
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Email";
@@ -162,18 +162,19 @@ namespace manganosekai
             this.tbemail.Location = new System.Drawing.Point(6, 16);
             this.tbemail.MaxLength = 50;
             this.tbemail.Name = "tbemail";
-            this.tbemail.Size = new System.Drawing.Size(230, 20);
+            this.tbemail.Size = new System.Drawing.Size(230, 22);
             this.tbemail.TabIndex = 13;
+            this.tbemail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbemail_KeyPress);
             // 
             // gboxsexo
             // 
             this.gboxsexo.Controls.Add(this.rbna);
             this.gboxsexo.Controls.Add(this.rbfeminino);
             this.gboxsexo.Controls.Add(this.rbmasculino);
-            this.gboxsexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxsexo.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxsexo.Location = new System.Drawing.Point(259, 186);
             this.gboxsexo.Name = "gboxsexo";
-            this.gboxsexo.Size = new System.Drawing.Size(262, 46);
+            this.gboxsexo.Size = new System.Drawing.Size(267, 46);
             this.gboxsexo.TabIndex = 8;
             this.gboxsexo.TabStop = false;
             this.gboxsexo.Text = "*Sexo";
@@ -181,10 +182,10 @@ namespace manganosekai
             // rbna
             // 
             this.rbna.AutoSize = true;
-            this.rbna.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbna.Location = new System.Drawing.Point(165, 19);
+            this.rbna.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbna.Location = new System.Drawing.Point(155, 17);
             this.rbna.Name = "rbna";
-            this.rbna.Size = new System.Drawing.Size(95, 17);
+            this.rbna.Size = new System.Drawing.Size(107, 19);
             this.rbna.TabIndex = 7;
             this.rbna.TabStop = true;
             this.rbna.Text = "Não Informado";
@@ -193,10 +194,10 @@ namespace manganosekai
             // rbfeminino
             // 
             this.rbfeminino.AutoSize = true;
-            this.rbfeminino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbfeminino.Location = new System.Drawing.Point(87, 19);
+            this.rbfeminino.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbfeminino.Location = new System.Drawing.Point(83, 17);
             this.rbfeminino.Name = "rbfeminino";
-            this.rbfeminino.Size = new System.Drawing.Size(67, 17);
+            this.rbfeminino.Size = new System.Drawing.Size(77, 19);
             this.rbfeminino.TabIndex = 6;
             this.rbfeminino.TabStop = true;
             this.rbfeminino.Text = "Feminino";
@@ -206,10 +207,10 @@ namespace manganosekai
             // 
             this.rbmasculino.AutoSize = true;
             this.rbmasculino.Checked = true;
-            this.rbmasculino.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbmasculino.Location = new System.Drawing.Point(8, 19);
+            this.rbmasculino.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbmasculino.Location = new System.Drawing.Point(6, 17);
             this.rbmasculino.Name = "rbmasculino";
-            this.rbmasculino.Size = new System.Drawing.Size(73, 17);
+            this.rbmasculino.Size = new System.Drawing.Size(81, 19);
             this.rbmasculino.TabIndex = 5;
             this.rbmasculino.TabStop = true;
             this.rbmasculino.Text = "Masculino";
@@ -218,7 +219,7 @@ namespace manganosekai
             // groupBox19
             // 
             this.groupBox19.Controls.Add(this.mtbtelefonecel);
-            this.groupBox19.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox19.Location = new System.Drawing.Point(152, 236);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Size = new System.Drawing.Size(118, 46);
@@ -228,7 +229,7 @@ namespace manganosekai
             // 
             // mtbtelefonecel
             // 
-            this.mtbtelefonecel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbtelefonecel.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtbtelefonecel.Location = new System.Drawing.Point(6, 16);
             this.mtbtelefonecel.Mask = "(00)00000-0000";
             this.mtbtelefonecel.Name = "mtbtelefonecel";
@@ -238,7 +239,7 @@ namespace manganosekai
             // groupBox18
             // 
             this.groupBox18.Controls.Add(this.mtboxtelefoneresi);
-            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox18.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox18.Location = new System.Drawing.Point(10, 235);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Size = new System.Drawing.Size(136, 47);
@@ -248,8 +249,8 @@ namespace manganosekai
             // 
             // mtboxtelefoneresi
             // 
-            this.mtboxtelefoneresi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtboxtelefoneresi.Location = new System.Drawing.Point(6, 15);
+            this.mtboxtelefoneresi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtboxtelefoneresi.Location = new System.Drawing.Point(6, 17);
             this.mtboxtelefoneresi.Mask = "(00)0000-0000";
             this.mtboxtelefoneresi.Name = "mtboxtelefoneresi";
             this.mtboxtelefoneresi.Size = new System.Drawing.Size(123, 21);
@@ -258,7 +259,7 @@ namespace manganosekai
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.mtboxrg);
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.Location = new System.Drawing.Point(10, 186);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(99, 44);
@@ -268,36 +269,36 @@ namespace manganosekai
             // 
             // mtboxrg
             // 
-            this.mtboxrg.Location = new System.Drawing.Point(6, 18);
+            this.mtboxrg.Location = new System.Drawing.Point(9, 15);
             this.mtboxrg.Mask = "00,000,000-A";
             this.mtboxrg.Name = "mtboxrg";
-            this.mtboxrg.Size = new System.Drawing.Size(84, 20);
+            this.mtboxrg.Size = new System.Drawing.Size(84, 22);
             this.mtboxrg.TabIndex = 9;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.mtboxcpf);
-            this.groupBox7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(383, 136);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(136, 44);
+            this.groupBox7.Size = new System.Drawing.Size(143, 44);
             this.groupBox7.TabIndex = 9;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "*CPF";
             // 
             // mtboxcpf
             // 
-            this.mtboxcpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtboxcpf.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtboxcpf.Location = new System.Drawing.Point(6, 17);
             this.mtboxcpf.Mask = "000,000,000-00";
             this.mtboxcpf.Name = "mtboxcpf";
-            this.mtboxcpf.Size = new System.Drawing.Size(123, 21);
+            this.mtboxcpf.Size = new System.Drawing.Size(126, 21);
             this.mtboxcpf.TabIndex = 8;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.mtbdatanascimento);
-            this.groupBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Controls.Add(this.dtpnascimento);
+            this.groupBox4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(115, 186);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(138, 46);
@@ -305,22 +306,21 @@ namespace manganosekai
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "*Data de nascimento";
             // 
-            // mtbdatanascimento
+            // dtpnascimento
             // 
-            this.mtbdatanascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbdatanascimento.Location = new System.Drawing.Point(15, 17);
-            this.mtbdatanascimento.Mask = "00/00/0000";
-            this.mtbdatanascimento.Name = "mtbdatanascimento";
-            this.mtbdatanascimento.Size = new System.Drawing.Size(81, 22);
-            this.mtbdatanascimento.TabIndex = 2;
-            this.mtbdatanascimento.ValidatingType = typeof(System.DateTime);
-            this.mtbdatanascimento.TypeValidationCompleted += new System.Windows.Forms.TypeValidationEventHandler(this.mtbdatanascimento_TypeValidationCompleted);
-            this.mtbdatanascimento.Leave += new System.EventHandler(this.mtbdatanascimento_Leave);
+            this.dtpnascimento.CustomFormat = "dd/MM/yyyy";
+            this.dtpnascimento.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpnascimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpnascimento.Location = new System.Drawing.Point(15, 17);
+            this.dtpnascimento.Name = "dtpnascimento";
+            this.dtpnascimento.Size = new System.Drawing.Size(107, 22);
+            this.dtpnascimento.TabIndex = 2;
+            this.dtpnascimento.Leave += new System.EventHandler(this.dtpnascimento_Leave);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tbnomesocial);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(10, 136);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(360, 44);
@@ -334,28 +334,28 @@ namespace manganosekai
             this.tbnomesocial.Location = new System.Drawing.Point(8, 17);
             this.tbnomesocial.MaxLength = 40;
             this.tbnomesocial.Name = "tbnomesocial";
-            this.tbnomesocial.Size = new System.Drawing.Size(333, 20);
+            this.tbnomesocial.Size = new System.Drawing.Size(333, 22);
             this.tbnomesocial.TabIndex = 3;
             this.tbnomesocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbnomesocial_KeyPress);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tbnomecliente);
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(10, 86);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(509, 44);
+            this.groupBox2.Size = new System.Drawing.Size(516, 44);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "*Nome do cliente";
             // 
             // tbnomecliente
             // 
-            this.tbnomecliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnomecliente.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbnomecliente.Location = new System.Drawing.Point(6, 18);
             this.tbnomecliente.MaxLength = 40;
             this.tbnomecliente.Name = "tbnomecliente";
-            this.tbnomecliente.Size = new System.Drawing.Size(496, 20);
+            this.tbnomecliente.Size = new System.Drawing.Size(499, 20);
             this.tbnomecliente.TabIndex = 1;
             this.tbnomecliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbnomecliente_KeyPress);
             // 
@@ -364,7 +364,7 @@ namespace manganosekai
             this.gboxsituacao.Controls.Add(this.rbinativo);
             this.gboxsituacao.Controls.Add(this.rbAtivo);
             this.gboxsituacao.Enabled = false;
-            this.gboxsituacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxsituacao.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxsituacao.Location = new System.Drawing.Point(139, 30);
             this.gboxsituacao.Name = "gboxsituacao";
             this.gboxsituacao.Size = new System.Drawing.Size(131, 50);
@@ -377,7 +377,7 @@ namespace manganosekai
             this.rbinativo.AutoSize = true;
             this.rbinativo.Location = new System.Drawing.Point(61, 19);
             this.rbinativo.Name = "rbinativo";
-            this.rbinativo.Size = new System.Drawing.Size(57, 17);
+            this.rbinativo.Size = new System.Drawing.Size(62, 20);
             this.rbinativo.TabIndex = 1;
             this.rbinativo.Text = "Inativo";
             this.rbinativo.UseVisualStyleBackColor = true;
@@ -388,7 +388,7 @@ namespace manganosekai
             this.rbAtivo.Checked = true;
             this.rbAtivo.Location = new System.Drawing.Point(6, 19);
             this.rbAtivo.Name = "rbAtivo";
-            this.rbAtivo.Size = new System.Drawing.Size(49, 17);
+            this.rbAtivo.Size = new System.Drawing.Size(54, 20);
             this.rbAtivo.TabIndex = 0;
             this.rbAtivo.TabStop = true;
             this.rbAtivo.Text = "Ativo";
@@ -397,7 +397,7 @@ namespace manganosekai
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbcod);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(116, 52);
@@ -408,9 +408,9 @@ namespace manganosekai
             // tbcod
             // 
             this.tbcod.Enabled = false;
-            this.tbcod.Location = new System.Drawing.Point(16, 20);
+            this.tbcod.Location = new System.Drawing.Point(7, 21);
             this.tbcod.Name = "tbcod";
-            this.tbcod.Size = new System.Drawing.Size(72, 20);
+            this.tbcod.Size = new System.Drawing.Size(103, 22);
             this.tbcod.TabIndex = 0;
             // 
             // gbendereco
@@ -422,21 +422,22 @@ namespace manganosekai
             this.gbendereco.Controls.Add(this.groupBox12);
             this.gbendereco.Controls.Add(this.groupBox11);
             this.gbendereco.Controls.Add(this.groupBox10);
-            this.gbendereco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbendereco.Location = new System.Drawing.Point(34, 366);
+            this.gbendereco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbendereco.Location = new System.Drawing.Point(22, 340);
             this.gbendereco.Name = "gbendereco";
-            this.gbendereco.Size = new System.Drawing.Size(537, 109);
+            this.gbendereco.Size = new System.Drawing.Size(537, 133);
             this.gbendereco.TabIndex = 12;
             this.gbendereco.TabStop = false;
             this.gbendereco.Text = "Cadastro de endereço";
+            this.gbendereco.Enter += new System.EventHandler(this.gbendereco_Enter);
             // 
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.cbuf);
-            this.groupBox16.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(458, 64);
+            this.groupBox16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(458, 77);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(63, 39);
+            this.groupBox16.Size = new System.Drawing.Size(63, 50);
             this.groupBox16.TabIndex = 3;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "*UF";
@@ -444,133 +445,137 @@ namespace manganosekai
             // cbuf
             // 
             this.cbuf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbuf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbuf.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbuf.FormattingEnabled = true;
-            this.cbuf.Location = new System.Drawing.Point(6, 13);
+            this.cbuf.Location = new System.Drawing.Point(6, 20);
             this.cbuf.Name = "cbuf";
-            this.cbuf.Size = new System.Drawing.Size(46, 21);
+            this.cbuf.Size = new System.Drawing.Size(46, 22);
             this.cbuf.TabIndex = 24;
             // 
             // groupBox15
             // 
             this.groupBox15.Controls.Add(this.mtbcep);
-            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox15.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox15.Location = new System.Drawing.Point(6, 19);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(94, 39);
+            this.groupBox15.Size = new System.Drawing.Size(94, 52);
             this.groupBox15.TabIndex = 2;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "CEP";
             // 
             // mtbcep
             // 
-            this.mtbcep.Location = new System.Drawing.Point(12, 13);
+            this.mtbcep.Location = new System.Drawing.Point(10, 19);
             this.mtbcep.Mask = "00000-000";
             this.mtbcep.Name = "mtbcep";
-            this.mtbcep.Size = new System.Drawing.Size(71, 20);
+            this.mtbcep.Size = new System.Drawing.Size(78, 22);
             this.mtbcep.TabIndex = 18;
             this.mtbcep.Leave += new System.EventHandler(this.mtbcep_Leave);
             // 
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.tbcidade);
-            this.groupBox14.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.Location = new System.Drawing.Point(313, 64);
+            this.groupBox14.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox14.Location = new System.Drawing.Point(313, 77);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(139, 39);
+            this.groupBox14.Size = new System.Drawing.Size(139, 50);
             this.groupBox14.TabIndex = 3;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "*Cidade";
             // 
             // tbcidade
             // 
-            this.tbcidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbcidade.Location = new System.Drawing.Point(6, 13);
+            this.tbcidade.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbcidade.Location = new System.Drawing.Point(6, 22);
             this.tbcidade.Name = "tbcidade";
             this.tbcidade.Size = new System.Drawing.Size(127, 20);
             this.tbcidade.TabIndex = 23;
+            this.tbcidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbcidade_KeyPress);
             // 
             // groupBox13
             // 
             this.groupBox13.Controls.Add(this.tbbairro);
-            this.groupBox13.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(206, 64);
+            this.groupBox13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(207, 77);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(101, 39);
+            this.groupBox13.Size = new System.Drawing.Size(101, 50);
             this.groupBox13.TabIndex = 2;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "*Bairro";
             // 
             // tbbairro
             // 
-            this.tbbairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbbairro.Location = new System.Drawing.Point(6, 13);
+            this.tbbairro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbbairro.Location = new System.Drawing.Point(6, 22);
             this.tbbairro.Name = "tbbairro";
             this.tbbairro.Size = new System.Drawing.Size(89, 20);
             this.tbbairro.TabIndex = 22;
+            this.tbbairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbbairro_KeyPress);
             // 
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.tbcomplemento);
-            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(5, 64);
+            this.groupBox12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox12.Location = new System.Drawing.Point(6, 77);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(195, 39);
+            this.groupBox12.Size = new System.Drawing.Size(195, 50);
             this.groupBox12.TabIndex = 1;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Complemento";
             // 
             // tbcomplemento
             // 
-            this.tbcomplemento.Location = new System.Drawing.Point(6, 13);
+            this.tbcomplemento.Location = new System.Drawing.Point(6, 21);
             this.tbcomplemento.Name = "tbcomplemento";
-            this.tbcomplemento.Size = new System.Drawing.Size(183, 20);
+            this.tbcomplemento.Size = new System.Drawing.Size(183, 22);
             this.tbcomplemento.TabIndex = 21;
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.tbnumero);
-            this.groupBox11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(419, 19);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(102, 39);
+            this.groupBox11.Size = new System.Drawing.Size(102, 52);
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "*Numero";
             // 
             // tbnumero
             // 
-            this.tbnumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbnumero.Location = new System.Drawing.Point(6, 13);
+            this.tbnumero.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbnumero.Location = new System.Drawing.Point(9, 21);
             this.tbnumero.Name = "tbnumero";
             this.tbnumero.Size = new System.Drawing.Size(87, 20);
             this.tbnumero.TabIndex = 20;
+            this.tbnumero.TextChanged += new System.EventHandler(this.tbnumero_TextChanged);
+            this.tbnumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbnumero_KeyPress);
             // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.tbendereco);
-            this.groupBox10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(106, 19);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(307, 39);
+            this.groupBox10.Size = new System.Drawing.Size(307, 52);
             this.groupBox10.TabIndex = 0;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "*Endereço";
             // 
             // tbendereco
             // 
-            this.tbendereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbendereco.Location = new System.Drawing.Point(6, 13);
+            this.tbendereco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbendereco.Location = new System.Drawing.Point(6, 21);
             this.tbendereco.Name = "tbendereco";
             this.tbendereco.Size = new System.Drawing.Size(287, 20);
             this.tbendereco.TabIndex = 19;
             // 
             // btvoltar
             // 
-            this.btvoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvoltar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btvoltar.Image = ((System.Drawing.Image)(resources.GetObject("btvoltar.Image")));
             this.btvoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btvoltar.Location = new System.Drawing.Point(476, 488);
+            this.btvoltar.Location = new System.Drawing.Point(464, 479);
             this.btvoltar.Name = "btvoltar";
             this.btvoltar.Size = new System.Drawing.Size(95, 52);
             this.btvoltar.TabIndex = 16;
@@ -580,10 +585,10 @@ namespace manganosekai
             // 
             // btcadastrar
             // 
-            this.btcadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcadastrar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btcadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btcadastrar.Image")));
             this.btcadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btcadastrar.Location = new System.Drawing.Point(179, 488);
+            this.btcadastrar.Location = new System.Drawing.Point(167, 479);
             this.btcadastrar.Name = "btcadastrar";
             this.btcadastrar.Size = new System.Drawing.Size(99, 52);
             this.btcadastrar.TabIndex = 13;
@@ -595,10 +600,10 @@ namespace manganosekai
             // btexcluir
             // 
             this.btexcluir.AutoSize = true;
-            this.btexcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btexcluir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btexcluir.Image = ((System.Drawing.Image)(resources.GetObject("btexcluir.Image")));
             this.btexcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btexcluir.Location = new System.Drawing.Point(383, 488);
+            this.btexcluir.Location = new System.Drawing.Point(371, 479);
             this.btexcluir.Margin = new System.Windows.Forms.Padding(0);
             this.btexcluir.Name = "btexcluir";
             this.btexcluir.Size = new System.Drawing.Size(90, 52);
@@ -609,10 +614,10 @@ namespace manganosekai
             // 
             // btatualizar
             // 
-            this.btatualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btatualizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btatualizar.Image = ((System.Drawing.Image)(resources.GetObject("btatualizar.Image")));
             this.btatualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btatualizar.Location = new System.Drawing.Point(282, 488);
+            this.btatualizar.Location = new System.Drawing.Point(270, 479);
             this.btatualizar.Name = "btatualizar";
             this.btatualizar.Size = new System.Drawing.Size(98, 52);
             this.btatualizar.TabIndex = 14;
@@ -624,28 +629,29 @@ namespace manganosekai
             // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(174)))));
             this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 0);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(594, 30);
+            this.statusStrip1.Size = new System.Drawing.Size(566, 27);
             this.statusStrip1.TabIndex = 18;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
-            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(181, 25);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(174, 22);
             this.toolStripStatusLabel1.Text = "Cadastro de cliente";
             // 
             // fmccliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 569);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(566, 543);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.btvoltar);
             this.Controls.Add(this.btcadastrar);
@@ -653,6 +659,7 @@ namespace manganosekai
             this.Controls.Add(this.btatualizar);
             this.Controls.Add(this.gbendereco);
             this.Controls.Add(this.groupBox17);
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fmccliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -674,7 +681,6 @@ namespace manganosekai
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -721,7 +727,7 @@ namespace manganosekai
         public System.Windows.Forms.MaskedTextBox mtboxtelefoneresi;
         public System.Windows.Forms.MaskedTextBox mtboxrg;
         public System.Windows.Forms.MaskedTextBox mtboxcpf;
-        public System.Windows.Forms.MaskedTextBox mtbdatanascimento;
+        public System.Windows.Forms.DateTimePicker dtpnascimento;
         public System.Windows.Forms.TextBox tbnomesocial;
         public System.Windows.Forms.TextBox tbnomecliente;
         public System.Windows.Forms.RadioButton rbinativo;
@@ -737,7 +743,6 @@ namespace manganosekai
         public System.Windows.Forms.GroupBox groupBox17;
         public System.Windows.Forms.GroupBox groupBox26;
         public System.Windows.Forms.GroupBox groupBox22;
-        public System.Windows.Forms.GroupBox gboxsexo;
         public System.Windows.Forms.GroupBox groupBox19;
         public System.Windows.Forms.GroupBox groupBox18;
         public System.Windows.Forms.GroupBox groupBox8;
@@ -754,5 +759,6 @@ namespace manganosekai
         public System.Windows.Forms.GroupBox groupBox12;
         public System.Windows.Forms.GroupBox groupBox11;
         public System.Windows.Forms.GroupBox groupBox10;
+        public System.Windows.Forms.GroupBox gboxsexo;
     }
 }

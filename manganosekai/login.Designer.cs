@@ -70,6 +70,7 @@ namespace manganosekai
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(101, 20);
             this.tb_password.TabIndex = 4;
+            this.tb_password.UseSystemPasswordChar = true;
             // 
             // tb_user
             // 
@@ -116,6 +117,7 @@ namespace manganosekai
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(389, 153);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);

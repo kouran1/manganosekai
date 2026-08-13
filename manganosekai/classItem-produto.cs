@@ -27,7 +27,7 @@ namespace manganosekai
 
         public bool CadastrarItemProduto()
         {
-            string sql = $"INSERT INTO item_produto VALUES(0, {qntd_item}, {valor_item.ToString().Replace(",",".")},{valor_total_item.ToString().Replace(",", ".")}, {cod_venda})";
+            string sql = $"INSERT INTO item_produto VALUES(0,{cod_produto}, {qntd_item}, {valor_item.ToString().Replace(",",".")},{valor_total_item.ToString().Replace(",", ".")}, {cod_venda})";
 
             classConexao cConexao = new classConexao();
 

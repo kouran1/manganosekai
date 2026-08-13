@@ -16,6 +16,8 @@ namespace manganosekai
         {
             InitializeComponent();
             lbdata.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+            tbcategoria.MaxLength = 40;
+            tboxdescricao.MaxLength = 100;
         }
         public string tipo;
 
@@ -41,7 +43,7 @@ namespace manganosekai
 
                 if(resp == 1)
                 {
-                    MessageBox.Show($"Categoria: {cCategoria.nome} Cadastrado com sucesso", "Manga no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Categoria: {cCategoria.nome} cadastrada com sucesso", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbcategoria.Clear();
                     tboxdescricao.Clear();
                     tbcategoria.Focus();
@@ -49,7 +51,7 @@ namespace manganosekai
                 }
                 else
                 {
-                    MessageBox.Show("Erro ao cadastrar o cargo", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Erro ao cadastrar a categoria", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
          
             }
@@ -63,7 +65,7 @@ namespace manganosekai
             lbdata.Text = DateTime.Now.ToString();
             if(tipo == "Atualização")
             {
-                label1.Text = "Atualização de categoria";
+                toolStripStatusLabel1.Text = "Atualização de categoria";
 
                 gboxsituacao.Enabled = true;
                 btcadastrar.Enabled = false;
@@ -79,7 +81,10 @@ namespace manganosekai
 
         private void btvoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void lbdata_Click(object sender, EventArgs e)
@@ -123,7 +128,7 @@ namespace manganosekai
 
                 if (resp == 1)
                 {
-                    MessageBox.Show($"Categoria: {cCategoria.nome} atualizada com sucesso", "Manga no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Categoria: {cCategoria.nome} atualizada com sucesso", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbcategoria.Clear();
                     tboxdescricao.Clear();
                     tbcategoria.Focus();
@@ -148,7 +153,7 @@ namespace manganosekai
                 int resp = cCategoria.deletecategoria();
                 if (resp == 1)
                 {
-                    MessageBox.Show("Categoria excluida com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Categoria excluída com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
                 }
                 else
@@ -160,6 +165,11 @@ namespace manganosekai
             {
                 this.Close();
             }
+        }
+
+        private void tbcategoria_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,7 +16,33 @@ namespace manganosekai
         {
             InitializeComponent();
         }
-        
+        public Point downPoint = Point.Empty;
+        protected override void OnLoad(EventArgs e)
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+            {
+                MouseDown += new MouseEventHandler(Form_MouseDown);
+                MouseMove += new MouseEventHandler(Form_MouseMove);
+                MouseUp += new MouseEventHandler(Form_MouseUp);
+            }
+            base.OnLoad(e);
+        }
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+        private void Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            downPoint = Point.Empty;
+        }
+
+
 
         private void formRelFuncionario_Load(object sender, EventArgs e)
         {
@@ -148,7 +174,7 @@ namespace manganosekai
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja fechar o relatório de funcionário???", "Sistema Loja Cosméticos", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -195,7 +221,7 @@ namespace manganosekai
                 case "Data de Admissão":
                     if(dtpDataInicial.Value > dtpDataFinal.Value || dtpDataFinal.Value < dtpDataInicial.Value)
                     {
-                        MessageBox.Show("Insira um intervalo de data valido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Insira um intervalo de datas válido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
 
                     }
@@ -224,7 +250,7 @@ namespace manganosekai
                     }
                     else
                     {
-                        MessageBox.Show("Escolha um valor valido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Escolha um valor válido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         cbSexo.Focus();
                     }
  
@@ -249,7 +275,7 @@ namespace manganosekai
                 default:
                     if(cbMes.SelectedIndex == 0)
                     {
-                        MessageBox.Show("Selecione um mês valido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Selecione um mês válido", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         cbMes.Focus();
                         cbMes.ForeColor = Color.PaleVioletRed;
                         

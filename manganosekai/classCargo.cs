@@ -91,7 +91,7 @@ namespace manganosekai
         public DataTable consultarCargoData(DateTime dtcadastro)
         {
 
-            string sql = $"SELECT cargo.cod_cargo, cargo.nome, cargo.status, cargo.observacao, cargo.data_cadastro FROM cargo WHERE cargo.data_cadastro = '{dtcadastro.ToString("yyyy-MM-dd")}'";
+            string sql = $"SELECT cargo.cod_cargo, cargo.nome, cargo.status, cargo.observacao, cargo.data_cadastro FROM cargo WHERE DATE(cargo.data_cadastro) = '{dtcadastro.ToString("yyyy-MM-dd")}'";
             classConexao cConexao = new classConexao();
             return cConexao.RetornaDados(sql);
         }

@@ -45,14 +45,14 @@ namespace manganosekai
             this.tbcargo = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbcodigocargo = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbtitulo = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox3.SuspendLayout();
             this.Descricao.SuspendLayout();
             this.gboxsituacao.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -60,9 +60,11 @@ namespace manganosekai
             this.groupBox3.Controls.Add(this.lbdatacadastro);
             this.groupBox3.Enabled = false;
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(278, 69);
+            this.groupBox3.Location = new System.Drawing.Point(306, 57);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(114, 44);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(163, 54);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data de cadastro";
@@ -71,7 +73,7 @@ namespace manganosekai
             // 
             this.lbdatacadastro.AutoSize = true;
             this.lbdatacadastro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbdatacadastro.Location = new System.Drawing.Point(21, 22);
+            this.lbdatacadastro.Location = new System.Drawing.Point(24, 27);
             this.lbdatacadastro.Name = "lbdatacadastro";
             this.lbdatacadastro.Size = new System.Drawing.Size(29, 14);
             this.lbdatacadastro.TabIndex = 1;
@@ -80,12 +82,13 @@ namespace manganosekai
             // 
             // btvoltar
             // 
-            this.btvoltar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvoltar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btvoltar.Image = ((System.Drawing.Image)(resources.GetObject("btvoltar.Image")));
             this.btvoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btvoltar.Location = new System.Drawing.Point(302, 338);
+            this.btvoltar.Location = new System.Drawing.Point(360, 353);
+            this.btvoltar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btvoltar.Name = "btvoltar";
-            this.btvoltar.Size = new System.Drawing.Size(90, 34);
+            this.btvoltar.Size = new System.Drawing.Size(109, 42);
             this.btvoltar.TabIndex = 8;
             this.btvoltar.Text = "Sair";
             this.btvoltar.UseVisualStyleBackColor = true;
@@ -93,12 +96,13 @@ namespace manganosekai
             // 
             // btexcluir
             // 
-            this.btexcluir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btexcluir.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btexcluir.Image = ((System.Drawing.Image)(resources.GetObject("btexcluir.Image")));
             this.btexcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btexcluir.Location = new System.Drawing.Point(217, 338);
+            this.btexcluir.Location = new System.Drawing.Point(251, 353);
+            this.btexcluir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btexcluir.Name = "btexcluir";
-            this.btexcluir.Size = new System.Drawing.Size(86, 34);
+            this.btexcluir.Size = new System.Drawing.Size(100, 42);
             this.btexcluir.TabIndex = 7;
             this.btexcluir.Text = "Excluir";
             this.btexcluir.UseVisualStyleBackColor = true;
@@ -106,12 +110,13 @@ namespace manganosekai
             // 
             // btatualizar
             // 
-            this.btatualizar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btatualizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btatualizar.Image = ((System.Drawing.Image)(resources.GetObject("btatualizar.Image")));
             this.btatualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btatualizar.Location = new System.Drawing.Point(134, 338);
+            this.btatualizar.Location = new System.Drawing.Point(142, 353);
+            this.btatualizar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btatualizar.Name = "btatualizar";
-            this.btatualizar.Size = new System.Drawing.Size(77, 34);
+            this.btatualizar.Size = new System.Drawing.Size(100, 42);
             this.btatualizar.TabIndex = 6;
             this.btatualizar.Text = "Atualizar";
             this.btatualizar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,12 +125,13 @@ namespace manganosekai
             // 
             // btcadastrar
             // 
-            this.btcadastrar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btcadastrar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btcadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btcadastrar.Image")));
             this.btcadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btcadastrar.Location = new System.Drawing.Point(44, 338);
+            this.btcadastrar.Location = new System.Drawing.Point(33, 353);
+            this.btcadastrar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btcadastrar.Name = "btcadastrar";
-            this.btcadastrar.Size = new System.Drawing.Size(84, 34);
+            this.btcadastrar.Size = new System.Drawing.Size(100, 42);
             this.btcadastrar.TabIndex = 5;
             this.btcadastrar.Text = "Cadastrar";
             this.btcadastrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -135,19 +141,22 @@ namespace manganosekai
             // Descricao
             // 
             this.Descricao.Controls.Add(this.tbobservacao);
-            this.Descricao.Location = new System.Drawing.Point(44, 169);
+            this.Descricao.Location = new System.Drawing.Point(33, 180);
+            this.Descricao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Descricao.Name = "Descricao";
-            this.Descricao.Size = new System.Drawing.Size(348, 163);
+            this.Descricao.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Descricao.Size = new System.Drawing.Size(436, 165);
             this.Descricao.TabIndex = 4;
             this.Descricao.TabStop = false;
             this.Descricao.Text = "Descrição";
             // 
             // tbobservacao
             // 
-            this.tbobservacao.Location = new System.Drawing.Point(10, 19);
+            this.tbobservacao.Location = new System.Drawing.Point(12, 23);
+            this.tbobservacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbobservacao.Multiline = true;
             this.tbobservacao.Name = "tbobservacao";
-            this.tbobservacao.Size = new System.Drawing.Size(332, 137);
+            this.tbobservacao.Size = new System.Drawing.Size(417, 132);
             this.tbobservacao.TabIndex = 0;
             // 
             // gboxsituacao
@@ -156,9 +165,11 @@ namespace manganosekai
             this.gboxsituacao.Controls.Add(this.rbativo);
             this.gboxsituacao.Enabled = false;
             this.gboxsituacao.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.gboxsituacao.Location = new System.Drawing.Point(140, 69);
+            this.gboxsituacao.Location = new System.Drawing.Point(145, 57);
+            this.gboxsituacao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gboxsituacao.Name = "gboxsituacao";
-            this.gboxsituacao.Size = new System.Drawing.Size(132, 44);
+            this.gboxsituacao.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gboxsituacao.Size = new System.Drawing.Size(154, 54);
             this.gboxsituacao.TabIndex = 1;
             this.gboxsituacao.TabStop = false;
             this.gboxsituacao.Text = "Situação*";
@@ -166,9 +177,10 @@ namespace manganosekai
             // rbinativo
             // 
             this.rbinativo.AutoSize = true;
-            this.rbinativo.Location = new System.Drawing.Point(61, 18);
+            this.rbinativo.Location = new System.Drawing.Point(71, 22);
+            this.rbinativo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbinativo.Name = "rbinativo";
-            this.rbinativo.Size = new System.Drawing.Size(57, 17);
+            this.rbinativo.Size = new System.Drawing.Size(62, 20);
             this.rbinativo.TabIndex = 1;
             this.rbinativo.TabStop = true;
             this.rbinativo.Text = "Inativo";
@@ -179,9 +191,10 @@ namespace manganosekai
             // 
             this.rbativo.AutoSize = true;
             this.rbativo.Checked = true;
-            this.rbativo.Location = new System.Drawing.Point(6, 18);
+            this.rbativo.Location = new System.Drawing.Point(7, 22);
+            this.rbativo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rbativo.Name = "rbativo";
-            this.rbativo.Size = new System.Drawing.Size(49, 17);
+            this.rbativo.Size = new System.Drawing.Size(54, 20);
             this.rbativo.TabIndex = 0;
             this.rbativo.TabStop = true;
             this.rbativo.Text = "Ativo";
@@ -190,63 +203,70 @@ namespace manganosekai
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tbcargo);
-            this.groupBox2.Location = new System.Drawing.Point(44, 119);
+            this.groupBox2.Location = new System.Drawing.Point(33, 118);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(348, 44);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(436, 54);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cargo";
             // 
             // tbcargo
             // 
-            this.tbcargo.Location = new System.Drawing.Point(10, 18);
+            this.tbcargo.Location = new System.Drawing.Point(12, 22);
+            this.tbcargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbcargo.Name = "tbcargo";
-            this.tbcargo.Size = new System.Drawing.Size(332, 20);
+            this.tbcargo.Size = new System.Drawing.Size(417, 22);
             this.tbcargo.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tbcodigocargo);
-            this.groupBox1.Location = new System.Drawing.Point(44, 69);
+            this.groupBox1.Location = new System.Drawing.Point(33, 57);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(90, 44);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(105, 54);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Codigo cargo";
+            this.groupBox1.Text = "Código";
             // 
             // tbcodigocargo
             // 
             this.tbcodigocargo.Enabled = false;
-            this.tbcodigocargo.Location = new System.Drawing.Point(10, 18);
+            this.tbcodigocargo.Location = new System.Drawing.Point(12, 22);
+            this.tbcodigocargo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbcodigocargo.Name = "tbcodigocargo";
-            this.tbcodigocargo.Size = new System.Drawing.Size(74, 20);
+            this.tbcodigocargo.Size = new System.Drawing.Size(86, 22);
             this.tbcodigocargo.TabIndex = 0;
             // 
-            // panel1
+            // statusStrip1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
-            this.panel1.Controls.Add(this.lbtitulo);
-            this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(442, 39);
-            this.panel1.TabIndex = 9;
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(174)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(512, 27);
+            this.statusStrip1.TabIndex = 19;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // lbtitulo
+            // toolStripStatusLabel1
             // 
-            this.lbtitulo.AutoSize = true;
-            this.lbtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtitulo.Location = new System.Drawing.Point(30, 9);
-            this.lbtitulo.Name = "lbtitulo";
-            this.lbtitulo.Size = new System.Drawing.Size(166, 20);
-            this.lbtitulo.TabIndex = 0;
-            this.lbtitulo.Text = "Cadastro de cargos";
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(167, 22);
+            this.toolStripStatusLabel1.Text = "Cadastro de cargo";
             // 
             // fmccargo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 411);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(512, 430);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btvoltar);
             this.Controls.Add(this.btexcluir);
@@ -256,7 +276,9 @@ namespace manganosekai
             this.Controls.Add(this.gboxsituacao);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fmccargo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmccargo";
@@ -271,9 +293,10 @@ namespace manganosekai
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -284,8 +307,6 @@ namespace manganosekai
         private System.Windows.Forms.Button btcadastrar;
         private System.Windows.Forms.GroupBox Descricao;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbtitulo;
         public System.Windows.Forms.TextBox tbobservacao;
         public System.Windows.Forms.TextBox tbcargo;
         public System.Windows.Forms.GroupBox groupBox3;
@@ -295,5 +316,7 @@ namespace manganosekai
         public System.Windows.Forms.RadioButton rbinativo;
         public System.Windows.Forms.RadioButton rbativo;
         public System.Windows.Forms.Label lbdatacadastro;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

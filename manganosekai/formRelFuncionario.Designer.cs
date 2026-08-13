@@ -55,11 +55,11 @@
             this.gbStatus = new System.Windows.Forms.GroupBox();
             this.rbInativo = new System.Windows.Forms.RadioButton();
             this.rbAtivo = new System.Windows.Forms.RadioButton();
-            this.pnTituloFuncionario = new System.Windows.Forms.Panel();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.gbTipoRel = new System.Windows.Forms.GroupBox();
             this.btSair = new System.Windows.Forms.Button();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.classFuncionarioBindingSource)).BeginInit();
             this.gbCargo.SuspendLayout();
             this.gbSexo.SuspendLayout();
@@ -68,8 +68,8 @@
             this.gbAniversariantes.SuspendLayout();
             this.gbIdade.SuspendLayout();
             this.gbStatus.SuspendLayout();
-            this.pnTituloFuncionario.SuspendLayout();
             this.gbTipoRel.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // classFuncionarioBindingSource
@@ -81,7 +81,7 @@
             // 
             this.gbCargo.Controls.Add(this.cbCargo);
             this.gbCargo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCargo.Location = new System.Drawing.Point(33, 196);
+            this.gbCargo.Location = new System.Drawing.Point(24, 178);
             this.gbCargo.Name = "gbCargo";
             this.gbCargo.Size = new System.Drawing.Size(207, 66);
             this.gbCargo.TabIndex = 128;
@@ -105,10 +105,10 @@
             this.btGerarRelatorio.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGerarRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btGerarRelatorio.Image")));
             this.btGerarRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btGerarRelatorio.Location = new System.Drawing.Point(33, 668);
+            this.btGerarRelatorio.Location = new System.Drawing.Point(24, 650);
             this.btGerarRelatorio.Name = "btGerarRelatorio";
             this.btGerarRelatorio.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btGerarRelatorio.Size = new System.Drawing.Size(169, 43);
+            this.btGerarRelatorio.Size = new System.Drawing.Size(206, 43);
             this.btGerarRelatorio.TabIndex = 131;
             this.btGerarRelatorio.Text = "     Gerar Relatório";
             this.btGerarRelatorio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,7 +119,7 @@
             // 
             this.gbSexo.Controls.Add(this.cbSexo);
             this.gbSexo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSexo.Location = new System.Drawing.Point(33, 523);
+            this.gbSexo.Location = new System.Drawing.Point(24, 505);
             this.gbSexo.Name = "gbSexo";
             this.gbSexo.Size = new System.Drawing.Size(207, 66);
             this.gbSexo.TabIndex = 123;
@@ -143,7 +143,7 @@
             this.gbDataAdmissao.Controls.Add(this.label8);
             this.gbDataAdmissao.Controls.Add(this.dtpDataFinal);
             this.gbDataAdmissao.Controls.Add(this.dtpDataInicial);
-            this.gbDataAdmissao.Location = new System.Drawing.Point(33, 340);
+            this.gbDataAdmissao.Location = new System.Drawing.Point(24, 322);
             this.gbDataAdmissao.Name = "gbDataAdmissao";
             this.gbDataAdmissao.Size = new System.Drawing.Size(206, 105);
             this.gbDataAdmissao.TabIndex = 126;
@@ -204,7 +204,7 @@
             // 
             this.gbCidade.Controls.Add(this.cbCidade);
             this.gbCidade.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCidade.Location = new System.Drawing.Point(33, 268);
+            this.gbCidade.Location = new System.Drawing.Point(24, 250);
             this.gbCidade.Name = "gbCidade";
             this.gbCidade.Size = new System.Drawing.Size(207, 66);
             this.gbCidade.TabIndex = 127;
@@ -225,12 +225,12 @@
             // gbAniversariantes
             // 
             this.gbAniversariantes.Controls.Add(this.cbMes);
-            this.gbAniversariantes.Location = new System.Drawing.Point(33, 124);
+            this.gbAniversariantes.Location = new System.Drawing.Point(24, 106);
             this.gbAniversariantes.Name = "gbAniversariantes";
             this.gbAniversariantes.Size = new System.Drawing.Size(207, 66);
             this.gbAniversariantes.TabIndex = 125;
             this.gbAniversariantes.TabStop = false;
-            this.gbAniversariantes.Text = "Aniversariantes Mês:";
+            this.gbAniversariantes.Text = "Aniversariantes do mês:";
             // 
             // cbMes
             // 
@@ -249,7 +249,7 @@
             this.gbIdade.Controls.Add(this.txtIdadeInicial);
             this.gbIdade.Controls.Add(this.label13);
             this.gbIdade.Controls.Add(this.label14);
-            this.gbIdade.Location = new System.Drawing.Point(33, 451);
+            this.gbIdade.Location = new System.Drawing.Point(24, 433);
             this.gbIdade.Name = "gbIdade";
             this.gbIdade.Size = new System.Drawing.Size(206, 66);
             this.gbIdade.TabIndex = 124;
@@ -299,7 +299,7 @@
             this.gbStatus.Controls.Add(this.rbInativo);
             this.gbStatus.Controls.Add(this.rbAtivo);
             this.gbStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbStatus.Location = new System.Drawing.Point(33, 595);
+            this.gbStatus.Location = new System.Drawing.Point(24, 577);
             this.gbStatus.Name = "gbStatus";
             this.gbStatus.Size = new System.Drawing.Size(207, 66);
             this.gbStatus.TabIndex = 122;
@@ -328,32 +328,11 @@
             this.rbAtivo.Text = "Ativo";
             this.rbAtivo.UseVisualStyleBackColor = true;
             // 
-            // pnTituloFuncionario
-            // 
-            this.pnTituloFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
-            this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
-            this.pnTituloFuncionario.Location = new System.Drawing.Point(0, 0);
-            this.pnTituloFuncionario.Name = "pnTituloFuncionario";
-            this.pnTituloFuncionario.Size = new System.Drawing.Size(1090, 46);
-            this.pnTituloFuncionario.TabIndex = 121;
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(400, 9);
-            this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(270, 29);
-            this.lbTitulo.TabIndex = 65;
-            this.lbTitulo.Text = "Relatório de Funcionários";
-            this.lbTitulo.Click += new System.EventHandler(this.lbTitulo_Click);
-            // 
             // gbTipoRel
             // 
             this.gbTipoRel.Controls.Add(this.cbTipoRel);
             this.gbTipoRel.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTipoRel.Location = new System.Drawing.Point(33, 52);
+            this.gbTipoRel.Location = new System.Drawing.Point(24, 34);
             this.gbTipoRel.Name = "gbTipoRel";
             this.gbTipoRel.Size = new System.Drawing.Size(207, 66);
             this.gbTipoRel.TabIndex = 133;
@@ -363,13 +342,13 @@
             // btSair
             // 
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btSair.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
             this.btSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSair.Location = new System.Drawing.Point(208, 669);
+            this.btSair.Location = new System.Drawing.Point(24, 699);
             this.btSair.Name = "btSair";
             this.btSair.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btSair.Size = new System.Drawing.Size(74, 43);
+            this.btSair.Size = new System.Drawing.Size(207, 43);
             this.btSair.TabIndex = 134;
             this.btSair.Text = "Sair";
             this.btSair.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -378,21 +357,42 @@
             // 
             // reportViewer
             // 
+            this.reportViewer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             reportDataSource1.Name = "dsfuncionario";
             reportDataSource1.Value = this.classFuncionarioBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "manganosekai.reportFuncionario.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(288, 52);
+            this.reportViewer.Location = new System.Drawing.Point(249, 34);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(766, 659);
+            this.reportViewer.Size = new System.Drawing.Size(776, 708);
             this.reportViewer.TabIndex = 135;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(174)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1038, 27);
+            this.statusStrip1.TabIndex = 136;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(210, 22);
+            this.toolStripStatusLabel1.Text = "Relatório de funcionário";
             // 
             // formRelFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 734);
+            this.ClientSize = new System.Drawing.Size(1038, 758);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.reportViewer);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.gbTipoRel);
@@ -404,7 +404,6 @@
             this.Controls.Add(this.gbAniversariantes);
             this.Controls.Add(this.gbIdade);
             this.Controls.Add(this.gbStatus);
-            this.Controls.Add(this.pnTituloFuncionario);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -423,10 +422,11 @@
             this.gbIdade.PerformLayout();
             this.gbStatus.ResumeLayout(false);
             this.gbStatus.PerformLayout();
-            this.pnTituloFuncionario.ResumeLayout(false);
-            this.pnTituloFuncionario.PerformLayout();
             this.gbTipoRel.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -455,11 +455,11 @@
         private System.Windows.Forms.GroupBox gbStatus;
         private System.Windows.Forms.RadioButton rbInativo;
         private System.Windows.Forms.RadioButton rbAtivo;
-        private System.Windows.Forms.Panel pnTituloFuncionario;
-        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.GroupBox gbTipoRel;
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.BindingSource classFuncionarioBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

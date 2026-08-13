@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +12,51 @@ namespace manganosekai
 {
     public partial class fmcfuncionarios : Form
     {
+        public Point downPoint = Point.Empty;
+        protected override void OnLoad(EventArgs e)
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+            {
+                MouseDown += new MouseEventHandler(Form_MouseDown);
+                MouseMove += new MouseEventHandler(Form_MouseMove);
+                MouseUp += new MouseEventHandler(Form_MouseUp);
+            }
+            base.OnLoad(e);
+        }
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+        private void Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            downPoint = Point.Empty;
+        }
+
         public fmcfuncionarios()
         {
             InitializeComponent();
+
+            tbnomefuncionario.MaxLength = 40;
+            tbnomesocial.MaxLength = 10;
+            tbendereco.MaxLength = 70;
+            tbnumero.MaxLength = 4;
+            tbcomplemento.MaxLength = 40;
+            tbbairro.MaxLength = 30;
+            tbcidade.MaxLength = 40;
+            tbemail.MaxLength = 50;
+            tblogin.MaxLength = 15;
+            tbsenha.MaxLength = 8;
+            tbsalario.MaxLength = 7;
+            dtpnascimento.Format = DateTimePickerFormat.Custom;
+            dtpnascimento.CustomFormat = "dd/MM/yyyy";
+            dtpnascimento.MinDate = new DateTime(1900, 1, 1);
+            dtpnascimento.MaxDate = DateTime.Now.Date;
         }
 
 
@@ -36,7 +78,10 @@ namespace manganosekai
 
         private void btvoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
         private void mtbcep_Leave(object sender, EventArgs e)
         {
@@ -149,7 +194,7 @@ namespace manganosekai
         private void CamposObrigatorios()
         {
             tbnomefuncionario.BackColor = Color.PaleVioletRed;
-            mtbdatanascimento.BackColor = Color.PaleVioletRed;
+            dtpnascimento.BackColor = Color.PaleVioletRed;
             gboxsexo.BackColor = Color.PaleVioletRed;
             mtboxcpf.BackColor = Color.PaleVioletRed;
             gbendereco.BackColor = Color.PaleVioletRed;
@@ -165,7 +210,7 @@ namespace manganosekai
         {
             tbnomefuncionario.Clear();
             tbnomesocial.Clear();
-            mtbdatanascimento.Clear();
+            dtpnascimento.Value = DateTime.Now.Date;
             rbmasculino.Checked = true ;
             cbestadocivil.SelectedIndex = 0;
             mtboxcpf.Clear();
@@ -228,7 +273,7 @@ namespace manganosekai
                 //Passar para as propriedades da classe o que foi inserido pelo usuario pelo usuario no FORM
                 cFuncionario.nome = tbnomefuncionario.Text;
                 cFuncionario.nome_social = tbnomesocial.Text;
-                cFuncionario.data_nascimento = Convert.ToDateTime(mtbdatanascimento.Text);
+                cFuncionario.data_nascimento = dtpnascimento.Value.Date;
 
                 //Sexo
                 if (rbmasculino.Checked == true)
@@ -334,7 +379,7 @@ namespace manganosekai
 
                 if(resp == 1)
                 {
-                    MessageBox.Show($"Funcionario: {cFuncionario.nome} cadastrado com sucesso", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Funcionário: {cFuncionario.nome} cadastrado com sucesso", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MetodoLimpar();
                 }
                 //Se não - falha ao cadastrar
@@ -350,14 +395,6 @@ namespace manganosekai
         private void cboxcargo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void mtbdatanascimento_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
-            {
-                e.Handled = true;
-            }
         }
 
         private void tbnomefuncionario_KeyPress(object sender, KeyPressEventArgs e)
@@ -394,7 +431,7 @@ namespace manganosekai
 
         private void mtboxrg_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != 8)
             {
                 e.Handled = true;
             }
@@ -431,20 +468,6 @@ namespace manganosekai
             }
         }
 
-        private void mtbdatanascimento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void mtbdatanascimento_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
-        {
-            if(!e.IsValidInput)
-            {
-                MessageBox.Show("Data invalida", "Mangá No Sekai", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                mtbdatanascimento.Focus();
-            }
-        }
-
         private void btatualizar_Click(object sender, EventArgs e)
         {
             classFuncionario cFuncionario = new classFuncionario();
@@ -476,7 +499,7 @@ namespace manganosekai
                 //Passar para as propriedades da classe o que foi inserido pelo usuario pelo usuario no FORM
                 cFuncionario.nome = tbnomefuncionario.Text;
                 cFuncionario.nome_social = tbnomesocial.Text;
-                cFuncionario.data_nascimento = Convert.ToDateTime(mtbdatanascimento.Text);
+                cFuncionario.data_nascimento = dtpnascimento.Value.Date;
 
                 //Sexo
                 if (rbmasculino.Checked == true)
@@ -594,7 +617,7 @@ namespace manganosekai
 
                 if (resp == 1)
                 {
-                    MessageBox.Show($"Funcionario: {cFuncionario.nome} atualizado com sucesso!", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Funcionário: {cFuncionario.nome} atualizado com sucesso!", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
                 }
@@ -619,7 +642,7 @@ namespace manganosekai
                 int resp = cfuncionario.deletarUsuario();
                 if(resp == 1)
                 {
-                    MessageBox.Show("Funcionario excluido com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Funcionário excluído com sucesso", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     this.Close();
                 }
                 else
@@ -631,6 +654,11 @@ namespace manganosekai
             {
                 this.Close();
             }
+        }
+
+        private void dtpnascimento_ValueChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void mtbcep_Leave_1(object sender, EventArgs e)
@@ -646,29 +674,56 @@ namespace manganosekai
             }
         }
 
-        private void mtbdatanascimento_Leave(object sender, EventArgs e)
+        private void tbnumero_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (mtbdatanascimento.Text == "  /  /")
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != 8)
             {
-                MessageBox.Show("Preencha a data!", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                mtbdatanascimento.Focus();
+                e.Handled = true;
+            }
+        }
+
+        private void tbbairro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbcidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbemail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '@' && e.KeyChar != '.' && e.KeyChar != '_' && e.KeyChar != '-' && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tblogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != '_' && e.KeyChar != '.' && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dtpnascimento_Leave(object sender, EventArgs e)
+        {
+            if (dtpnascimento.Value.Date > DateTime.Now.Date)
+            {
+                MessageBox.Show("Data inválida!", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                dtpnascimento.Value = DateTime.Now.Date;
+                dtpnascimento.Focus();
             }
             else
             {
-                //ARRAY
-                string[] partes = mtbdatanascimento.Text.Split('/');
-
-                int dia = Convert.ToInt32(partes[0]); // Array dia
-                int mes = Convert.ToInt32(partes[1]); // Array mês
-                int ano = Convert.ToInt32(partes[2]); // Array ano
-
-                if (dia < 1 || dia > 31 || mes < 1 || mes > 12 || ano < 1900 || ano > DateTime.Now.Year)
-                {                                              // ← faltava essa chave
-                    MessageBox.Show("Data inválida!", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    mtbdatanascimento.Clear();
-                    mtbdatanascimento.Focus();
-                }
-
             }
         }
     }

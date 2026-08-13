@@ -199,4 +199,20 @@
         QmCC
 </value>
   </data>
+  <data name="bt_sair.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        7AAAAOwBeShxvQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFmSURBVFhH7Ze9
+        SgNBFIU/EPUJYhdQBPu8hK2g+ACKlY3vID5AOv9bwXSC2Nhb+ABqLYilIohB/OPKDExubnZmYLJp9oNT
+        hDtz7mF39mYX4AD4Bn4L6ws4JoFxNPeSEFH0plF6Ay6BXoIeg31RdKMqfQDXwA7Q1kYB5+MKoNXVZo7a
+        AnxqM0dtAUY1aAJMPMCpq8mjKywAJ8CaWvePNsyVxTxwBKy43zIRZa0MvS21dsgwVymsBhN3KIQ2zFUq
+        m0GIH2DbF7RhrjxTwJ4xlkM9B/skzEbJAMtGLaaXkgHmgHujXqWzkgFiLAFPwb4rYFYK2jBXKSyq5hfA
+        jC9qw1xZyIGUMyG3RfBzQDTQXNCGubLYdTU5E4IMpFd3zweaC9owVxYT/y9oAjQBag2wbugmqEfRhqUV
+        5cHYVEp3upmFjEt5Q9kHboG+YVQlffm95C2opZulMA10EkMlfXyWwAr1Dhzqhbn8ATJ/cO2YTiR5AAAA
+        AElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="statusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

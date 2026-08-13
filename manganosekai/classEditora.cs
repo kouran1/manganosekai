@@ -77,7 +77,7 @@ namespace manganosekai
         public DataTable consultarEditoraData(DateTime dtcadastro)
         {
 
-            string sql = $"SELECT cod_editora AS Codigo, nome AS Nome, status AS Status, descricao AS 'Descrição', data_cadastro AS 'Data de Cadastro' FROM editora WHERE data_cadastro = '{dtcadastro.ToString("yyyy-MM-dd")}'";
+            string sql = $"SELECT cod_editora AS Codigo, nome AS Nome, status AS Status, descricao AS 'Descrição', data_cadastro AS 'Data de Cadastro' FROM editora WHERE DATE(data_cadastro) = '{dtcadastro.ToString("yyyy-MM-dd")}'";
             classConexao cConexao = new classConexao();
             return cConexao.RetornaDados(sql);
         }

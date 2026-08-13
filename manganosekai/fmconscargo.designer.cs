@@ -29,12 +29,8 @@ namespace manganosekai
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmconscargo));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnTituloFuncionario = new System.Windows.Forms.Panel();
-            this.btSair = new System.Windows.Forms.Button();
-            this.lbTitulo = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmconscargo));
             this.gbConsFuncionario = new System.Windows.Forms.GroupBox();
             this.gbdatacadastro = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,7 +47,9 @@ namespace manganosekai
             this.rbContem = new System.Windows.Forms.RadioButton();
             this.rbInicio = new System.Windows.Forms.RadioButton();
             this.dgvCargo = new System.Windows.Forms.DataGridView();
-            this.pnTituloFuncionario.SuspendLayout();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btSair = new System.Windows.Forms.Button();
             this.gbConsFuncionario.SuspendLayout();
             this.gbdatacadastro.SuspendLayout();
             this.gbStatus.SuspendLayout();
@@ -59,57 +57,12 @@ namespace manganosekai
             this.gbNome.SuspendLayout();
             this.gbTipoPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargo)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnTituloFuncionario
-            // 
-            this.pnTituloFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
-            this.pnTituloFuncionario.Controls.Add(this.btSair);
-            this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
-            this.pnTituloFuncionario.Controls.Add(this.label10);
-            this.pnTituloFuncionario.Location = new System.Drawing.Point(0, -4);
-            this.pnTituloFuncionario.Name = "pnTituloFuncionario";
-            this.pnTituloFuncionario.Size = new System.Drawing.Size(1160, 49);
-            this.pnTituloFuncionario.TabIndex = 50;
-            this.pnTituloFuncionario.Paint += new System.Windows.Forms.PaintEventHandler(this.pnTituloFuncionario_Paint);
-            // 
-            // btSair
-            // 
-            this.btSair.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSair.Location = new System.Drawing.Point(1112, 5);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(34, 34);
-            this.btSair.TabIndex = 233;
-            this.btSair.Text = "X";
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(23, 13);
-            this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(201, 29);
-            this.lbTitulo.TabIndex = 65;
-            this.lbTitulo.Text = "Consulta de cargos";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(572, 19);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(474, 23);
-            this.label10.TabIndex = 100;
-            this.label10.Text = "Para alterar ou excluir  um funcionário, selecione na grid!!!";
             // 
             // gbConsFuncionario
             // 
+            this.gbConsFuncionario.Controls.Add(this.btSair);
             this.gbConsFuncionario.Controls.Add(this.gbdatacadastro);
             this.gbConsFuncionario.Controls.Add(this.gbStatus);
             this.gbConsFuncionario.Controls.Add(this.gbOpcao);
@@ -117,7 +70,7 @@ namespace manganosekai
             this.gbConsFuncionario.Controls.Add(this.gbNome);
             this.gbConsFuncionario.Controls.Add(this.gbTipoPesquisa);
             this.gbConsFuncionario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbConsFuncionario.Location = new System.Drawing.Point(12, 51);
+            this.gbConsFuncionario.Location = new System.Drawing.Point(12, 30);
             this.gbConsFuncionario.Name = "gbConsFuncionario";
             this.gbConsFuncionario.Size = new System.Drawing.Size(378, 323);
             this.gbConsFuncionario.TabIndex = 49;
@@ -213,10 +166,10 @@ namespace manganosekai
             this.btPesquisar.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisar.Image")));
             this.btPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btPesquisar.Location = new System.Drawing.Point(95, 248);
+            this.btPesquisar.Location = new System.Drawing.Point(6, 257);
             this.btPesquisar.Name = "btPesquisar";
             this.btPesquisar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btPesquisar.Size = new System.Drawing.Size(174, 59);
+            this.btPesquisar.Size = new System.Drawing.Size(180, 59);
             this.btPesquisar.TabIndex = 111;
             this.btPesquisar.Text = "     Pesquisar";
             this.btPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -295,7 +248,7 @@ namespace manganosekai
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCargo.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCargo.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvCargo.Location = new System.Drawing.Point(396, 61);
+            this.dgvCargo.Location = new System.Drawing.Point(396, 40);
             this.dgvCargo.MultiSelect = false;
             this.dgvCargo.Name = "dgvCargo";
             this.dgvCargo.ReadOnly = true;
@@ -307,12 +260,45 @@ namespace manganosekai
             this.dgvCargo.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargo_CellClick);
             this.dgvCargo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCargo_CellContentClick);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(174)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1122, 27);
+            this.statusStrip1.TabIndex = 52;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(164, 22);
+            this.toolStripStatusLabel1.Text = "Consulta de cargo";
+            // 
+            // btSair
+            // 
+            this.btSair.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
+            this.btSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btSair.Location = new System.Drawing.Point(199, 258);
+            this.btSair.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(164, 58);
+            this.btSair.TabIndex = 116;
+            this.btSair.Text = "Sair";
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btvoltar_Click);
+            // 
             // fmconscargo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 392);
-            this.Controls.Add(this.pnTituloFuncionario);
+            this.ClientSize = new System.Drawing.Size(1122, 362);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gbConsFuncionario);
             this.Controls.Add(this.dgvCargo);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,8 +308,6 @@ namespace manganosekai
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formConsCargo";
             this.Load += new System.EventHandler(this.fmconscargo_Load);
-            this.pnTituloFuncionario.ResumeLayout(false);
-            this.pnTituloFuncionario.PerformLayout();
             this.gbConsFuncionario.ResumeLayout(false);
             this.gbdatacadastro.ResumeLayout(false);
             this.gbdatacadastro.PerformLayout();
@@ -335,16 +319,14 @@ namespace manganosekai
             this.gbTipoPesquisa.ResumeLayout(false);
             this.gbTipoPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCargo)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnTituloFuncionario;
-        private System.Windows.Forms.Button btSair;
-        private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox gbConsFuncionario;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dtpDataCadastro;
@@ -361,5 +343,8 @@ namespace manganosekai
         public System.Windows.Forms.GroupBox gbOpcao;
         public System.Windows.Forms.GroupBox gbNome;
         public System.Windows.Forms.GroupBox gbTipoPesquisa;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button btSair;
     }
 }

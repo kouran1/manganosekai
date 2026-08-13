@@ -79,7 +79,7 @@ namespace manganosekai
 
         public int cadastrarfuncionario()
         {
-            string sql = $"INSERT INTO funcionario VALUES(0,'{nome}','{nome_social}','{data_nascimento.ToString("yyy-MM-dd")}','{sexo}','{estado_civil}','{cpf}','{rg}', '{salario.ToString().Replace(",", ".")}','{endereco}',{numero},'{complemento}', '{bairro}','{cidade}', '{uf}', '{cep}', '{telefone_residencial}', '{telefone_celular}','{email}',1, NOW(), '{usuario}','{senha}',{tipo_acesso},'{foto}',{cod_cargo});";
+            string sql = $"INSERT INTO funcionario VALUES(0,'{nome}','{nome_social}','{data_nascimento.ToString("yyyy-MM-dd")}','{sexo}','{estado_civil}','{cpf}','{rg}', '{salario.ToString().Replace(",", ".")}','{endereco}',{numero},'{complemento}', '{bairro}','{cidade}', '{uf}', '{cep}', '{telefone_residencial}', '{telefone_celular}','{email}',1, NOW(), '{usuario}','{senha}',{tipo_acesso},'{foto}',{cod_cargo});";
 
             classConexao cConexao = new classConexao();
             return cConexao.ExecutaQuery(sql);
@@ -90,73 +90,73 @@ namespace manganosekai
 
         public DataTable consultaFuncionarioCidade(string cidade)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cidade = '{cidade}' ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cidade = '{cidade}' ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         public DataTable consultarFuncionarioCargo(int cargo)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cod_cargo = {cargo} ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cod_cargo = {cargo} ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         public DataTable consultarFuncionarioSexo(string sexo)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.sexo = '{sexo}' ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.sexo = '{sexo}' ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         public DataTable consultarFuncionarioCpf(string cpf)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cpf = '{cpf}' ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cpf = '{cpf}' ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
 
         //Consulta de funcionario por nome inicio
         public DataTable consultarFuncionarioNomeInicio(string nomei)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.nome LIKE '{nomei}%' ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.nome LIKE '{nomei}%' ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
 
         //Consulta de funcionario por nome (contém)
         public DataTable consultarFuncionarioNomeContem(string nomec)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.nome LIKE '%{nomec}%' ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.nome LIKE '%{nomec}%' ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
 
         //Consulta de funcionario por data cadastro (admissao)
         public DataTable consultarFuncionarioDataCadastro(DateTime datai, DateTime dataf)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND CAST(funcionario.data_cadastro AS DATE) BETWEEN '{datai.ToString("yyyy-MM-dd")}' AND '{dataf.ToString("yyyy-MM-dd")}'  ORDER BY funcionario.nome;";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND CAST(funcionario.data_cadastro AS DATE) BETWEEN '{datai.ToString("yyyy-MM-dd")}' AND '{dataf.ToString("yyyy-MM-dd")}'  ORDER BY funcionario.nome;";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         //Consulta de funcionario por status    
         public DataTable consultarFuncionarioStatus(int status)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = {status};";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = {status};";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         //Consultar por sexo cidade
         public DataTable ConsultarFuncionarioCidadeSexo(string sexo, string cidadesx)
         {
-            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.cidade = '{cidadesx}' AND funcionario.sexo = '{sexo}' ";
+            string sql = $"SELECT funcionario.cod_funcionario 'COD', funcionario.nome 'Nome', funcionario.cpf 'CPF', funcionario.data_nascimento 'Nascimento', funcionario.cidade 'Cidade', funcionario.sexo 'Sexo' , cargo.nome 'Cargo', funcionario.telefone_celular 'Celular', funcionario.data_cadastro AS 'Data de Cadastro' FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.cidade = '{cidadesx}' AND funcionario.sexo = '{sexo}' ";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
 
         //Reports - relatórios
@@ -166,7 +166,7 @@ namespace manganosekai
          {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND MONTH(funcionario.data_nascimento) = {mes} ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
          }
 
 
@@ -176,7 +176,7 @@ namespace manganosekai
         {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status =  1 AND TIMESTAMPDIFF(YEAR, funcionario.data_nascimento, NOW()) BETWEEN {idadei} AND {idadef} ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
         }
 
         //Por cargo
@@ -184,13 +184,13 @@ namespace manganosekai
         {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cod_cargo  = {cargo} ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
         }
         public DataTable ReportFuncionarioCidade(string cidade)
         {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.cidade = '{cidade}' ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
         }
         public DataTable carregarVendedor()
         {
@@ -202,26 +202,90 @@ namespace manganosekai
         {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND  CAST(funcionario.data_cadastro AS DATE) BETWEEN '{datai.ToString("yyyy-MM-dd")}' AND '{dataf.ToString("yyyy-MM-dd")}'  ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
         }
         public DataTable ReportFuncionarioSexo(string sexo)
         {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = 1 AND funcionario.sexo = '{sexo}' ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
         }
+
+        private DataTable tratarSexoRelatorio(DataTable dt)
+        {
+            if (dt != null)
+            {
+                dt.Columns["sexo"].MaxLength = 20;
+
+                foreach (DataRow linha in dt.Rows)
+                {
+                    if (linha["sexo"].ToString().ToUpper() == "M")
+                    {
+                        linha["sexo"] = "Masculino";
+                    }
+                    else
+                    {
+                        if (linha["sexo"].ToString().ToUpper() == "F")
+                        {
+                            linha["sexo"] = "Feminino";
+                        }
+                        else
+                        {
+                            linha["sexo"] = "Não informado";
+                        }
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        private DataTable tratarSexoConsulta(DataTable dt)
+        {
+            if (dt != null)
+            {
+                if (dt.Columns.Contains("Sexo"))
+                {
+                    dt.Columns["Sexo"].MaxLength = 20;
+
+                    foreach (DataRow linha in dt.Rows)
+                    {
+                        if (linha["Sexo"].ToString().ToUpper() == "M")
+                        {
+                            linha["Sexo"] = "Masculino";
+                        }
+                        else
+                        {
+                            if (linha["Sexo"].ToString().ToUpper() == "F")
+                            {
+                                linha["Sexo"] = "Feminino";
+                            }
+                            else
+                            {
+                                linha["Sexo"] = "Não informado";
+                            }
+                        }
+                    }
+                }
+            }
+
+            return dt;
+        }
+
         public DataTable ReportFuncionarioStatus(int status)
         {
             string sql = $"SELECT funcionario.nome, funcionario.cpf, funcionario.telefone_celular, funcionario.data_nascimento, funcionario.sexo, cargo.nome 'cod_cargo', funcionario.cidade, funcionario.data_cadastro FROM funcionario JOIN cargo ON funcionario.cod_cargo = cargo.cod_cargo WHERE funcionario.status = {status} ORDER BY funcionario.nome";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
         }
+
+       
 
         // Login do sistema
 
         public bool loginUser(string user, string password)
         {
-            string sql = $"SELECT funcionario.usuario, funcionario.senha,funcionario.tipo_acesso,funcionario.status FROM funcionario WHERE status = 1 AND funcionario.usuario = '{user}' AND funcionario.senha = '{password}';";
+            string sql = $"SELECT funcionario.usuario AS usuario, funcionario.senha AS senha,funcionario.tipo_acesso AS tipo_acesso,funcionario.status as status FROM funcionario WHERE status = 1 AND funcionario.usuario = '{user}' AND funcionario.senha = '{password}';";
 
             classConexao cConexao = new classConexao();
             DataTable dt = cConexao.RetornaDados(sql);
@@ -230,6 +294,7 @@ namespace manganosekai
             {
                 usuario = Convert.ToString(dt.Rows[0]["usuario"]);
                 senha = Convert.ToString(dt.Rows[0]["senha"]);
+                tipo_acesso = Convert.ToInt32(dt.Rows[0]["tipo_acesso"]);
                 return true;
             }
             else
@@ -299,7 +364,7 @@ namespace manganosekai
         //Metodo para atualizar funcionario
         public int atualizarFuncionario()
         {
-            string sql = $"UPDATE funcionario SET nome = '{nome}', nome_social = '{nome_social}',data_nascimento = '{data_nascimento.ToString("yyy-MM-dd")}', sexo ='{sexo}',estado_civil ='{estado_civil}', cpf ='{cpf}', rg ='{rg}', salario = '{salario.ToString().Replace(",", ".")}', endereco ='{endereco}',numero = {numero}, complemento = '{complemento}', bairro='{bairro}', cidade ='{cidade}',uf = '{uf}',cep = '{cep}', telefone_residencial = '{telefone_residencial}', telefone_celular ='{telefone_celular}',email ='{email}', status = {status}, usuario ='{usuario}', senha ='{senha}', tipo_acesso ={tipo_acesso},foto ='{foto}',cod_cargo = {cod_cargo} WHERE cod_funcionario = {cod_funcionario}";
+            string sql = $"UPDATE funcionario SET nome = '{nome}', nome_social = '{nome_social}',data_nascimento = '{data_nascimento.ToString("yyyy-MM-dd")}', sexo ='{sexo}',estado_civil ='{estado_civil}', cpf ='{cpf}', rg ='{rg}', salario = '{salario.ToString().Replace(",", ".")}', endereco ='{endereco}',numero = {numero}, complemento = '{complemento}', bairro='{bairro}', cidade ='{cidade}',uf = '{uf}',cep = '{cep}', telefone_residencial = '{telefone_residencial}', telefone_celular ='{telefone_celular}',email ='{email}', status = {status}, usuario ='{usuario}', senha ='{senha}', tipo_acesso ={tipo_acesso},foto ='{foto}',cod_cargo = {cod_cargo} WHERE cod_funcionario = {cod_funcionario}";
 
             classConexao cConexao = new classConexao();
             return cConexao.ExecutaQuery(sql);

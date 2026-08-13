@@ -21,9 +21,7 @@ namespace manganosekai
 
         private void formRelProduto_Load(object sender, EventArgs e)
         {
-            classEditora cEditora = new classEditora();
-            classAutor cAutor = new classAutor();
-            classCategoria cCategoria = new classCategoria();
+            classProduto cProduto = new classProduto();
             
             cbTipoRel.Items.Add("Editora");
             cbTipoRel.Items.Add("Categoria");
@@ -35,26 +33,24 @@ namespace manganosekai
 
             cbTipoRel.SelectedIndex = 0;
 
-            cbEditora.DataSource = cEditora.buscarEditoras();
+            cbEditora.DataSource = cProduto.buscarEditoraRelatorio();
             cbEditora.DisplayMember = "nome";
             cbEditora.ValueMember = "cod_editora";
             cbEditora.SelectedIndex = 0;
 
-            cbAutor.DataSource = cAutor.buscarautor();
-            cbAutor.DisplayMember = "nome";
-            cbAutor.ValueMember = "cod_autor";
+            cbAutor.DataSource = cProduto.buscarAutorRelatorio();
+            cbAutor.DisplayMember = "Autor";
+            cbAutor.ValueMember = "Código";
             cbAutor.SelectedIndex = 0;
 
-            cbCategoria.DataSource = cCategoria.buscarcategoria();
+            cbCategoria.DataSource = cProduto.buscarCategoriaRelatorio();
             cbCategoria.DisplayMember = "nome";
             cbCategoria.ValueMember = "cod_categoria";
             cbCategoria.SelectedIndex = 0;
 
 
             this.reportViewer.RefreshReport();
-            this.reportViewer.RefreshReport();
-            this.reportViewer.RefreshReport();
-            this.reportViewer.RefreshReport();
+
         }
 
         private void cbTipoRel_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,7 +152,7 @@ namespace manganosekai
                     this.reportViewer.RefreshReport();
                     break;
                 case "Preço de Venda":
-                    if(String.IsNullOrWhiteSpace(tbPrecoIni.Text) || String.IsNullOrWhiteSpace(tbPrecoIni.Text))
+                    if(String.IsNullOrWhiteSpace(tbPrecoIni.Text) || String.IsNullOrWhiteSpace(tbPrecoFim.Text))
                     {
                         MessageBox.Show("Por favor preencha os campos destacados", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tbPrecoFim.BackColor = Color.PaleVioletRed;

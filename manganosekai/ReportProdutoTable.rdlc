@@ -6,27 +6,27 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.3cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>4.4cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.71167cm</Width>
+              <Width>3cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>5.8cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.73229cm</Height>
+              <Height>0.75cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -37,9 +37,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Codigo</Value>
+                              <Value>Cód.</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>#1A0A00</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -51,10 +54,11 @@
                       <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
-                        <BackgroundColor>Gold</BackgroundColor>
+                        <BackgroundColor>#F6DEAE</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -74,7 +78,10 @@
                             <TextRun>
                               <Value>Titulo</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>#1A0A00</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -86,10 +93,11 @@
                       <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
-                        <BackgroundColor>Gold</BackgroundColor>
+                        <BackgroundColor>#F6DEAE</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -109,7 +117,10 @@
                             <TextRun>
                               <Value>Volume</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>#1A0A00</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -121,10 +132,11 @@
                       <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
-                        <BackgroundColor>Gold</BackgroundColor>
+                        <BackgroundColor>#F6DEAE</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -144,7 +156,10 @@
                             <TextRun>
                               <Value>Preço de Venda</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>#1A0A00</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -156,10 +171,11 @@
                       <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
-                        <BackgroundColor>Gold</BackgroundColor>
+                        <BackgroundColor>#F6DEAE</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -177,9 +193,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Qntd em estoque</Value>
+                              <Value>Estoque</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>#1A0A00</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -191,10 +210,11 @@
                       <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
-                        <BackgroundColor>Gold</BackgroundColor>
+                        <BackgroundColor>#F6DEAE</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -214,7 +234,10 @@
                             <TextRun>
                               <Value>Autor</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
+                                <Color>#1A0A00</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -226,10 +249,11 @@
                       <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
-                        <BackgroundColor>Gold</BackgroundColor>
+                        <BackgroundColor>#F6DEAE</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -253,7 +277,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!cod_produto.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8.5pt</FontSize>
+                                <Color>#2B2B2B</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -264,9 +292,11 @@
                       <rd:DefaultName>cod_produto</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#FFF4E6", "#FFFFFF")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -285,7 +315,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!titulo.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8.5pt</FontSize>
+                                <Color>#2B2B2B</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -296,9 +330,11 @@
                       <rd:DefaultName>titulo</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#FFF4E6", "#FFFFFF")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -317,7 +353,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!volume.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8.5pt</FontSize>
+                                <Color>#2B2B2B</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -328,9 +368,11 @@
                       <rd:DefaultName>volume</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#FFF4E6", "#FFFFFF")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -348,10 +390,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!preco_venda.Value</Value>
+                              <Value>=Format(Fields!preco_venda.Value, "C2")</Value>
                               <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8.5pt</FontSize>
                                 <Format>'R$'0.00;'R$'0.00-</Format>
                                 <rd:FormatSymbolCulture>pt-BR</rd:FormatSymbolCulture>
+                                <Color>#2B2B2B</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -363,9 +408,11 @@
                       <rd:DefaultName>preco_venda</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#FFF4E6", "#FFFFFF")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -384,7 +431,11 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!qntd_estoque.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8.5pt</FontSize>
+                                <Color>#2B2B2B</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -395,9 +446,11 @@
                       <rd:DefaultName>qntd_estoque</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#FFF4E6", "#FFFFFF")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -415,8 +468,12 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!cod_autor.Value</Value>
-                              <Style />
+                              <Value>=Fields!nome_autor.Value</Value>
+                              <Style>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8.5pt</FontSize>
+                                <Color>#2B2B2B</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -427,9 +484,11 @@
                       <rd:DefaultName>cod_autor</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>#8A6A32</Color>
                           <Style>Solid</Style>
+                          <Width>0.5pt</Width>
                         </Border>
+                        <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2 = 0, "#FFF4E6", "#FFFFFF")</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -463,10 +522,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.39911cm</Top>
-        <Left>0.84975cm</Left>
-        <Height>1.33229cm</Height>
-        <Width>15.21167cm</Width>
+        <Top>0.35cm</Top>
+        <Left>0.75cm</Left>
+        <Height>1.25291cm</Height>
+        <Width>18cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -477,26 +536,13 @@
     <Height>2.45036in</Height>
     <Style />
   </Body>
-  <Width>6.67559in</Width>
+  <Width>19.5cm</Width>
   <Page>
     <PageHeader>
-      <Height>2.59361cm</Height>
+      <Height>2.2cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>logo_manga_no_sekai</Value>
-          <Sizing>FitProportional</Sizing>
-          <Left>0.84975cm</Left>
-          <Height>2.59361cm</Height>
-          <Width>3.39333cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
         <Textbox Name="Textbox6">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -504,10 +550,12 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Relatório de produto</Value>
+                  <Value>Relatório de Produtos</Value>
                   <Style>
-                    <FontSize>12pt</FontSize>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>#1A0A00</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -520,8 +568,10 @@
                 <TextRun>
                   <Value />
                   <Style>
-                    <FontSize>12pt</FontSize>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8.5pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <Color>#2B2B2B</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -529,11 +579,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox6</rd:DefaultName>
-          <Top>1.18745cm</Top>
-          <Left>5.44724cm</Left>
-          <Height>0.67938cm</Height>
-          <Width>8.50464cm</Width>
-          <ZIndex>1</ZIndex>
+          <Top>0.65cm</Top>
+          <Left>3.2cm</Left>
+          <Height>0.8cm</Height>
+          <Width>15.5cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -544,6 +593,20 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>logo_manga_no_sekai</Value>
+          <Sizing>FitProportional</Sizing>
+          <Left>0.2cm</Left>
+          <Height>2cm</Height>
+          <Width>2.6cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
       </ReportItems>
       <Style>
         <Border>
@@ -557,7 +620,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>1.2cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -569,17 +632,21 @@
               <TextRuns>
                 <TextRun>
                   <Value>="Emitido: "&amp; Now.ToShortDateString &amp;" - "&amp; Now.ToShortTimeString</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <Color>#666666</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox7</rd:DefaultName>
-          <Top>1.04826cm</Top>
-          <Left>1.74308cm</Left>
+          <Top>0.3cm</Top>
+          <Left>0.25cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>6cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -598,17 +665,21 @@
               <TextRuns>
                 <TextRun>
                   <Value>="Pagina: " &amp; Globals!PageNumber &amp; " de " &amp; Globals!TotalPages</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Segoe UI</FontFamily>
+                    <FontSize>8pt</FontSize>
+                    <Color>#666666</Color>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox8</rd:DefaultName>
-          <Top>1.04826cm</Top>
-          <Left>11.77078cm</Left>
+          <Top>0.3cm</Top>
+          <Left>15cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>4cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -629,10 +700,10 @@
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>0.75cm</LeftMargin>
+    <RightMargin>0.75cm</RightMargin>
+    <TopMargin>0.75cm</TopMargin>
+    <BottomMargin>0.75cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -728,6 +799,10 @@
         <Field Name="volume">
           <DataField>volume</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="nome_autor">
+          <DataField>nome_autor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

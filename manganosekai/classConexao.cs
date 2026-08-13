@@ -114,7 +114,6 @@ namespace manganosekai
 
         }
 
-
         //DataTable: REPRESENTA UMA TABELA DE DADOS NA MEMÓRIA
         //MySqlDataAdapter SERÁ USADO PARA EXECUTAR COMANDOS USANDO UM DataSet OU DataTable
         //USADO SEMPRE QUE UMA CONSULTA NO BD TEM QUE SER FEITA
@@ -175,6 +174,51 @@ namespace manganosekai
             }
         }
         #endregion
+
+        // Executa dois comandos SQL dentro de uma transação.
+        // Se os dois comandos funcionarem, confirma as alterações com Commit.
+        // Se algum comando apresentar erro, desfaz todas as alterações com Rollback.
+        public int ExecutaTransacao(string primeiraQuery, string segundaQuery)
+        {
+            MySqlTransaction transacao = null;
+
+            try
+            {
+                Conectar();
+                transacao = c.BeginTransaction();
+
+                cmd = new MySqlCommand(primeiraQuery, c, transacao);
+                cmd.ExecuteNonQuery();
+
+                cmd = new MySqlCommand(segundaQuery, c, transacao);
+                int resp = cmd.ExecuteNonQuery();
+
+                if (resp == 1)
+                {
+                    transacao.Commit();
+                    return 1;
+                }
+                else
+                {
+                    transacao.Rollback();
+                    return 0;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                if (transacao != null)
+                {
+                    transacao.Rollback();
+                }
+
+                erro = ex.Message;
+                return 0;
+            }
+            finally
+            {
+                Desconectar();
+            }
+        }
 
 
     }

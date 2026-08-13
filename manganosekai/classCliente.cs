@@ -65,7 +65,7 @@ namespace manganosekai
         }
         public int atualizarcliente()
         {
-            string sql = $"UPDATE cliente SET nome = '{nome}', nome_social = '{nome + nome_social}',data_nascimento = '{data_nascimento.ToString("yyyy/MM/dd")}', sexo = '{sexo}',cpf = '{cpf}', rg = '{rg}', endereco = '{endereco}', numero = {numero}, complemento = '{complemento}',bairro = '{bairro}',cidade = '{cidade}', uf = '{uf}', cep = '{cep}',telefone_residencial = '{telefone_residencial}',telefone_celular = '{telefone_celular}', email = '{email}', status = {status} WHERE cod_cliente = {cod_cliente}";
+            string sql = $"UPDATE cliente SET nome = '{nome}', nome_social = '{nome_social}',data_nascimento = '{data_nascimento.ToString("yyyy/MM/dd")}', sexo = '{sexo}',cpf = '{cpf}', rg = '{rg}', endereco = '{endereco}', numero = {numero}, complemento = '{complemento}',bairro = '{bairro}',cidade = '{cidade}', uf = '{uf}', cep = '{cep}',telefone_residencial = '{telefone_residencial}',telefone_celular = '{telefone_celular}', email = '{email}', status = {status} WHERE cod_cliente = {cod_cliente}";
             classConexao objconexao = new classConexao();
 
             return objconexao.ExecutaQuery(sql);
@@ -78,47 +78,54 @@ namespace manganosekai
             return objconexao.ExecutaQuery(sql);
 
         }
+
+        public DataTable buscarCidade()
+        {
+            string sql = $"SELECT DISTINCT cidade FROM cliente GROUP BY cidade";
+            classConexao cConexao = new classConexao();
+            return cConexao.RetornaDados(sql);
+        }
         //Consultas
         public DataTable consultarClienteNomeIni(string nomei)
         {
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE nome LIKE '{nomei}%'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
 
         }
         public DataTable consultarClienteNomeContem(string nomec)
         {
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE nome LIKE '%{nomec}%'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         public DataTable consultarClienteSexo(string sexo)
         {
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE sexo = '{sexo}'";
 
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         public DataTable consultarClienteCidade(string cidade)
         {
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE cidade = '{cidade}'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
         }
         public DataTable consultarClienteEmail(string email)
         {
 
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE email = '{email}'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
 
         }
         public DataTable consultarClienteTelCelular(string telefonec)
         {
 
-            string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE telefone_celular = '{telefone_celular}'";
+            string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE telefone_celular = '{telefonec}'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
 
         }
         public DataTable consultarClienteData(DateTime datac)
@@ -126,7 +133,7 @@ namespace manganosekai
 
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE DATE (data_cadastro) = '{datac.ToString("yyyy-MM-dd")}'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
 
         }
         public DataTable consultarClienteStatus(int status)
@@ -134,15 +141,132 @@ namespace manganosekai
 
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE status = {status}";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
 
         }
-         public DataTable consultarClienteCpf(string cpf)
+        public DataTable ReportClienteStatus(int status)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = {status}";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClienteNomeC(string nomec)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND nome LIKE '%{nomec}%'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClienteIni(string nomeini)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND nome LIKE '{nomeini}%'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClientSexo(string sexo)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND sexo = '{sexo}'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClienteCidade(string cidade)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND cidade = '{cidade}'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClienteEmail(string email)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND email = '{email}'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClienteDataCadastro(DateTime dataCadastro)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND DATE(data_cadastro) = '{dataCadastro.ToString("yyyy-MM-dd")}'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClienteTelCel(string celular)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND telefone_celular = '{celular}'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+        public DataTable ReportClientCPF(string cpf)
+        {
+            string sql = $"SELECT cod_cliente, nome, data_nascimento, sexo, cpf, cidade, telefone_celular, email FROM cliente WHERE status = 1 AND cpf = '{cpf}'";
+            classConexao cConexao = new classConexao();
+            return tratarSexoRelatorio(cConexao.RetornaDados(sql));
+        }
+
+        private DataTable tratarSexoRelatorio(DataTable dt)
+        {
+            if (dt != null)
+            {
+                dt.Columns["sexo"].MaxLength = 20;
+
+                foreach (DataRow linha in dt.Rows)
+                {
+                    if (linha["sexo"].ToString().ToUpper() == "M")
+                    {
+                        linha["sexo"] = "Masculino";
+                    }
+                    else
+                    {
+                        if (linha["sexo"].ToString().ToUpper() == "F")
+                        {
+                            linha["sexo"] = "Feminino";
+                        }
+                        else
+                        {
+                            linha["sexo"] = "Não informado";
+                        }
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+        private DataTable tratarSexoConsulta(DataTable dt)
+        {
+            if (dt != null)
+            {
+                if (dt.Columns.Contains("Sexo"))
+                {
+                    dt.Columns["Sexo"].MaxLength = 20;
+
+                    foreach (DataRow linha in dt.Rows)
+                    {
+                        if (linha["Sexo"].ToString().ToUpper() == "M")
+                        {
+                            linha["Sexo"] = "Masculino";
+                        }
+                        else
+                        {
+                            if (linha["Sexo"].ToString().ToUpper() == "F")
+                            {
+                                linha["Sexo"] = "Feminino";
+                            }
+                            else
+                            {
+                                linha["Sexo"] = "Não informado";
+                            }
+                        }
+                    }
+                }
+            }
+
+            return dt;
+        }
+
+
+        public DataTable consultarClienteCpf(string cpf)
          {
 
             string sql = $"SELECT cod_cliente AS Codigo, nome AS Nome, data_nascimento AS 'Data de Nascimento', sexo AS Sexo, cpf AS CPF, cidade AS Cidade, uf AS Estado,telefone_residencial AS 'Tel. Residencial', telefone_celular AS 'Tel. Celular', email AS Email, status AS Status, data_cadastro AS 'Data de Cadastro' FROM cliente WHERE cpf = '{cpf}'";
             classConexao cConexao = new classConexao();
-            return cConexao.RetornaDados(sql);
+            return tratarSexoConsulta(cConexao.RetornaDados(sql));
 
          }
         public DataTable consultarClienteVenda(string nome)

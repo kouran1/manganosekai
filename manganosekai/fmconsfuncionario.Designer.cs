@@ -31,11 +31,8 @@ namespace manganosekai
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fmconsfuncionario));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnTituloFuncionario = new System.Windows.Forms.Panel();
-            this.btSair = new System.Windows.Forms.Button();
-            this.lbTitulo = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.gbConsFuncionario = new System.Windows.Forms.GroupBox();
+            this.btvoltar = new System.Windows.Forms.Button();
             this.gbCidade = new System.Windows.Forms.GroupBox();
             this.cboxcidade = new System.Windows.Forms.ComboBox();
             this.gbDataAdmissao = new System.Windows.Forms.GroupBox();
@@ -45,12 +42,12 @@ namespace manganosekai
             this.dtpDataInicial = new System.Windows.Forms.DateTimePicker();
             this.gbSexo = new System.Windows.Forms.GroupBox();
             this.cboxsexo = new System.Windows.Forms.ComboBox();
+            this.btPesquisar = new System.Windows.Forms.Button();
             this.gbStatus = new System.Windows.Forms.GroupBox();
             this.rbInativo = new System.Windows.Forms.RadioButton();
             this.rbAtivo = new System.Windows.Forms.RadioButton();
             this.gbOpcao = new System.Windows.Forms.GroupBox();
             this.cboxopcoes = new System.Windows.Forms.ComboBox();
-            this.btPesquisar = new System.Windows.Forms.Button();
             this.gbCPF = new System.Windows.Forms.GroupBox();
             this.mtboxcpf = new System.Windows.Forms.MaskedTextBox();
             this.gbNome = new System.Windows.Forms.GroupBox();
@@ -61,7 +58,8 @@ namespace manganosekai
             this.rbContem = new System.Windows.Forms.RadioButton();
             this.rbInicio = new System.Windows.Forms.RadioButton();
             this.dgvFuncionario = new System.Windows.Forms.DataGridView();
-            this.pnTituloFuncionario.SuspendLayout();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.gbConsFuncionario.SuspendLayout();
             this.gbCidade.SuspendLayout();
             this.gbDataAdmissao.SuspendLayout();
@@ -73,72 +71,43 @@ namespace manganosekai
             this.gbCargo.SuspendLayout();
             this.gbTipoPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnTituloFuncionario
-            // 
-            this.pnTituloFuncionario.Controls.Add(this.btSair);
-            this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
-            this.pnTituloFuncionario.Controls.Add(this.label10);
-            this.pnTituloFuncionario.Location = new System.Drawing.Point(12, 2);
-            this.pnTituloFuncionario.Name = "pnTituloFuncionario";
-            this.pnTituloFuncionario.Size = new System.Drawing.Size(1135, 52);
-            this.pnTituloFuncionario.TabIndex = 50;
-            // 
-            // btSair
-            // 
-            this.btSair.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSair.Location = new System.Drawing.Point(1101, 0);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(34, 34);
-            this.btSair.TabIndex = 233;
-            this.btSair.Text = "X";
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(84, 3);
-            this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(265, 29);
-            this.lbTitulo.TabIndex = 65;
-            this.lbTitulo.Text = "Consulta de Funcionários";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(546, 11);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(474, 23);
-            this.label10.TabIndex = 100;
-            this.label10.Text = "Para alterar ou excluir  um funcionário, selecione na grid!!!";
             // 
             // gbConsFuncionario
             // 
+            this.gbConsFuncionario.Controls.Add(this.btvoltar);
             this.gbConsFuncionario.Controls.Add(this.gbCidade);
             this.gbConsFuncionario.Controls.Add(this.gbDataAdmissao);
             this.gbConsFuncionario.Controls.Add(this.gbSexo);
+            this.gbConsFuncionario.Controls.Add(this.btPesquisar);
             this.gbConsFuncionario.Controls.Add(this.gbStatus);
             this.gbConsFuncionario.Controls.Add(this.gbOpcao);
-            this.gbConsFuncionario.Controls.Add(this.btPesquisar);
             this.gbConsFuncionario.Controls.Add(this.gbCPF);
             this.gbConsFuncionario.Controls.Add(this.gbNome);
             this.gbConsFuncionario.Controls.Add(this.gbCargo);
             this.gbConsFuncionario.Controls.Add(this.gbTipoPesquisa);
             this.gbConsFuncionario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbConsFuncionario.Location = new System.Drawing.Point(12, 51);
+            this.gbConsFuncionario.Location = new System.Drawing.Point(12, 30);
             this.gbConsFuncionario.Name = "gbConsFuncionario";
-            this.gbConsFuncionario.Size = new System.Drawing.Size(408, 458);
+            this.gbConsFuncionario.Size = new System.Drawing.Size(408, 541);
             this.gbConsFuncionario.TabIndex = 49;
             this.gbConsFuncionario.TabStop = false;
             this.gbConsFuncionario.Enter += new System.EventHandler(this.gbConsFuncionario_Enter);
+            // 
+            // btvoltar
+            // 
+            this.btvoltar.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btvoltar.Image = ((System.Drawing.Image)(resources.GetObject("btvoltar.Image")));
+            this.btvoltar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btvoltar.Location = new System.Drawing.Point(229, 479);
+            this.btvoltar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btvoltar.Name = "btvoltar";
+            this.btvoltar.Size = new System.Drawing.Size(164, 55);
+            this.btvoltar.TabIndex = 117;
+            this.btvoltar.Text = "Sair";
+            this.btvoltar.UseVisualStyleBackColor = true;
+            this.btvoltar.Click += new System.EventHandler(this.btvoltar_Click);
             // 
             // gbCidade
             // 
@@ -232,13 +201,28 @@ namespace manganosekai
             this.cboxsexo.Size = new System.Drawing.Size(142, 27);
             this.cboxsexo.TabIndex = 50;
             // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisar.Image")));
+            this.btPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btPesquisar.Location = new System.Drawing.Point(6, 479);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.btPesquisar.Size = new System.Drawing.Size(167, 55);
+            this.btPesquisar.TabIndex = 111;
+            this.btPesquisar.Text = "     Pesquisar";
+            this.btPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            // 
             // gbStatus
             // 
             this.gbStatus.Controls.Add(this.rbInativo);
             this.gbStatus.Controls.Add(this.rbAtivo);
             this.gbStatus.Location = new System.Drawing.Point(6, 376);
             this.gbStatus.Name = "gbStatus";
-            this.gbStatus.Size = new System.Drawing.Size(162, 65);
+            this.gbStatus.Size = new System.Drawing.Size(387, 65);
             this.gbStatus.TabIndex = 102;
             this.gbStatus.TabStop = false;
             this.gbStatus.Text = "Status:";
@@ -285,21 +269,6 @@ namespace manganosekai
             this.cboxopcoes.Size = new System.Drawing.Size(375, 27);
             this.cboxopcoes.TabIndex = 8;
             this.cboxopcoes.SelectedIndexChanged += new System.EventHandler(this.cboxopcoes_SelectedIndexChanged);
-            // 
-            // btPesquisar
-            // 
-            this.btPesquisar.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("btPesquisar.Image")));
-            this.btPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btPesquisar.Location = new System.Drawing.Point(201, 379);
-            this.btPesquisar.Name = "btPesquisar";
-            this.btPesquisar.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.btPesquisar.Size = new System.Drawing.Size(161, 62);
-            this.btPesquisar.TabIndex = 111;
-            this.btPesquisar.Text = "     Pesquisar";
-            this.btPesquisar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btPesquisar.UseVisualStyleBackColor = true;
-            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // gbCPF
             // 
@@ -411,24 +380,43 @@ namespace manganosekai
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvFuncionario.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFuncionario.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvFuncionario.Location = new System.Drawing.Point(426, 60);
+            this.dgvFuncionario.Location = new System.Drawing.Point(426, 39);
             this.dgvFuncionario.MultiSelect = false;
             this.dgvFuncionario.Name = "dgvFuncionario";
             this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.RowHeadersVisible = false;
             this.dgvFuncionario.RowHeadersWidth = 51;
             this.dgvFuncionario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFuncionario.Size = new System.Drawing.Size(721, 449);
+            this.dgvFuncionario.Size = new System.Drawing.Size(721, 532);
             this.dgvFuncionario.TabIndex = 51;
             this.dgvFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellClick);
             this.dgvFuncionario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(174)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1154, 27);
+            this.statusStrip1.TabIndex = 52;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(208, 22);
+            this.toolStripStatusLabel1.Text = "Consulta de funcionário";
             // 
             // fmconsfuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 526);
-            this.Controls.Add(this.pnTituloFuncionario);
+            this.ClientSize = new System.Drawing.Size(1154, 583);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.gbConsFuncionario);
             this.Controls.Add(this.dgvFuncionario);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -438,8 +426,6 @@ namespace manganosekai
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formConsFuncionario52";
             this.Load += new System.EventHandler(this.formConsFuncionario52_Load);
-            this.pnTituloFuncionario.ResumeLayout(false);
-            this.pnTituloFuncionario.PerformLayout();
             this.gbConsFuncionario.ResumeLayout(false);
             this.gbCidade.ResumeLayout(false);
             this.gbDataAdmissao.ResumeLayout(false);
@@ -456,16 +442,14 @@ namespace manganosekai
             this.gbTipoPesquisa.ResumeLayout(false);
             this.gbTipoPesquisa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnTituloFuncionario;
-        private System.Windows.Forms.Button btSair;
-        private System.Windows.Forms.Label lbTitulo;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox gbConsFuncionario;
         private System.Windows.Forms.GroupBox gbCidade;
         private System.Windows.Forms.ComboBox cboxcidade;
@@ -492,5 +476,8 @@ namespace manganosekai
         private System.Windows.Forms.RadioButton rbContem;
         private System.Windows.Forms.RadioButton rbInicio;
         private System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Button btvoltar;
     }
 }

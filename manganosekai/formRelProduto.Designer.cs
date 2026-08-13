@@ -56,8 +56,6 @@ namespace manganosekai
             this.gbStatus = new System.Windows.Forms.GroupBox();
             this.rbInativo = new System.Windows.Forms.RadioButton();
             this.rbAtivo = new System.Windows.Forms.RadioButton();
-            this.pnTituloFuncionario = new System.Windows.Forms.Panel();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.gbDataLancamento = new System.Windows.Forms.GroupBox();
             this.dtpfim = new System.Windows.Forms.DateTimePicker();
             this.dtpini = new System.Windows.Forms.DateTimePicker();
@@ -65,6 +63,8 @@ namespace manganosekai
             this.label2 = new System.Windows.Forms.Label();
             this.reportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.classFuncionarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.classProdutoBindingSource)).BeginInit();
             this.gbTipoRel.SuspendLayout();
             this.gbCategoria.SuspendLayout();
@@ -73,9 +73,9 @@ namespace manganosekai
             this.gbEditora.SuspendLayout();
             this.gbEstoque.SuspendLayout();
             this.gbStatus.SuspendLayout();
-            this.pnTituloFuncionario.SuspendLayout();
             this.gbDataLancamento.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classFuncionarioBindingSource)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // classProdutoBindingSource
@@ -88,7 +88,7 @@ namespace manganosekai
             this.btSair.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
             this.btSair.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btSair.Location = new System.Drawing.Point(33, 717);
+            this.btSair.Location = new System.Drawing.Point(22, 710);
             this.btSair.Name = "btSair";
             this.btSair.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btSair.Size = new System.Drawing.Size(207, 43);
@@ -102,7 +102,7 @@ namespace manganosekai
             // 
             this.gbTipoRel.Controls.Add(this.cbTipoRel);
             this.gbTipoRel.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTipoRel.Location = new System.Drawing.Point(33, 52);
+            this.gbTipoRel.Location = new System.Drawing.Point(22, 43);
             this.gbTipoRel.Name = "gbTipoRel";
             this.gbTipoRel.Size = new System.Drawing.Size(207, 66);
             this.gbTipoRel.TabIndex = 145;
@@ -126,7 +126,7 @@ namespace manganosekai
             this.gbCategoria.Controls.Add(this.cbCategoria);
             this.gbCategoria.Enabled = false;
             this.gbCategoria.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCategoria.Location = new System.Drawing.Point(33, 196);
+            this.gbCategoria.Location = new System.Drawing.Point(22, 187);
             this.gbCategoria.Name = "gbCategoria";
             this.gbCategoria.Size = new System.Drawing.Size(207, 66);
             this.gbCategoria.TabIndex = 143;
@@ -150,7 +150,7 @@ namespace manganosekai
             this.btGerarRelatorio.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGerarRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btGerarRelatorio.Image")));
             this.btGerarRelatorio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btGerarRelatorio.Location = new System.Drawing.Point(33, 668);
+            this.btGerarRelatorio.Location = new System.Drawing.Point(22, 658);
             this.btGerarRelatorio.Name = "btGerarRelatorio";
             this.btGerarRelatorio.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btGerarRelatorio.Size = new System.Drawing.Size(206, 43);
@@ -167,7 +167,8 @@ namespace manganosekai
             this.gbPrecoVenda.Controls.Add(this.label6);
             this.gbPrecoVenda.Controls.Add(this.label8);
             this.gbPrecoVenda.Enabled = false;
-            this.gbPrecoVenda.Location = new System.Drawing.Point(33, 340);
+            this.gbPrecoVenda.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbPrecoVenda.Location = new System.Drawing.Point(22, 331);
             this.gbPrecoVenda.Name = "gbPrecoVenda";
             this.gbPrecoVenda.Size = new System.Drawing.Size(206, 105);
             this.gbPrecoVenda.TabIndex = 141;
@@ -178,14 +179,14 @@ namespace manganosekai
             // 
             this.tbPrecoFim.Location = new System.Drawing.Point(53, 70);
             this.tbPrecoFim.Name = "tbPrecoFim";
-            this.tbPrecoFim.Size = new System.Drawing.Size(93, 20);
+            this.tbPrecoFim.Size = new System.Drawing.Size(93, 22);
             this.tbPrecoFim.TabIndex = 48;
             // 
             // tbPrecoIni
             // 
             this.tbPrecoIni.Location = new System.Drawing.Point(53, 32);
             this.tbPrecoIni.Name = "tbPrecoIni";
-            this.tbPrecoIni.Size = new System.Drawing.Size(93, 20);
+            this.tbPrecoIni.Size = new System.Drawing.Size(93, 22);
             this.tbPrecoIni.TabIndex = 47;
             // 
             // label6
@@ -215,7 +216,7 @@ namespace manganosekai
             this.gbAutor.Controls.Add(this.cbAutor);
             this.gbAutor.Enabled = false;
             this.gbAutor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbAutor.Location = new System.Drawing.Point(33, 268);
+            this.gbAutor.Location = new System.Drawing.Point(22, 259);
             this.gbAutor.Name = "gbAutor";
             this.gbAutor.Size = new System.Drawing.Size(207, 66);
             this.gbAutor.TabIndex = 142;
@@ -237,7 +238,7 @@ namespace manganosekai
             // 
             this.gbEditora.Controls.Add(this.cbEditora);
             this.gbEditora.Enabled = false;
-            this.gbEditora.Location = new System.Drawing.Point(33, 124);
+            this.gbEditora.Location = new System.Drawing.Point(22, 115);
             this.gbEditora.Name = "gbEditora";
             this.gbEditora.Size = new System.Drawing.Size(207, 66);
             this.gbEditora.TabIndex = 140;
@@ -262,7 +263,8 @@ namespace manganosekai
             this.gbEstoque.Controls.Add(this.label13);
             this.gbEstoque.Controls.Add(this.label14);
             this.gbEstoque.Enabled = false;
-            this.gbEstoque.Location = new System.Drawing.Point(33, 451);
+            this.gbEstoque.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbEstoque.Location = new System.Drawing.Point(22, 442);
             this.gbEstoque.Name = "gbEstoque";
             this.gbEstoque.Size = new System.Drawing.Size(206, 66);
             this.gbEstoque.TabIndex = 139;
@@ -274,7 +276,7 @@ namespace manganosekai
             this.tbEstoqueFim.Location = new System.Drawing.Point(144, 29);
             this.tbEstoqueFim.MaxLength = 3;
             this.tbEstoqueFim.Name = "tbEstoqueFim";
-            this.tbEstoqueFim.Size = new System.Drawing.Size(50, 20);
+            this.tbEstoqueFim.Size = new System.Drawing.Size(50, 22);
             this.tbEstoqueFim.TabIndex = 45;
             // 
             // tbEstoqueIni
@@ -282,7 +284,7 @@ namespace manganosekai
             this.tbEstoqueIni.Location = new System.Drawing.Point(43, 28);
             this.tbEstoqueIni.MaxLength = 3;
             this.tbEstoqueIni.Name = "tbEstoqueIni";
-            this.tbEstoqueIni.Size = new System.Drawing.Size(50, 20);
+            this.tbEstoqueIni.Size = new System.Drawing.Size(50, 22);
             this.tbEstoqueIni.TabIndex = 44;
             // 
             // label13
@@ -313,7 +315,7 @@ namespace manganosekai
             this.gbStatus.Controls.Add(this.rbAtivo);
             this.gbStatus.Enabled = false;
             this.gbStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbStatus.Location = new System.Drawing.Point(33, 595);
+            this.gbStatus.Location = new System.Drawing.Point(22, 586);
             this.gbStatus.Name = "gbStatus";
             this.gbStatus.Size = new System.Drawing.Size(207, 66);
             this.gbStatus.TabIndex = 137;
@@ -342,26 +344,6 @@ namespace manganosekai
             this.rbAtivo.Text = "Ativo";
             this.rbAtivo.UseVisualStyleBackColor = true;
             // 
-            // pnTituloFuncionario
-            // 
-            this.pnTituloFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(177)))), ((int)(((byte)(52)))));
-            this.pnTituloFuncionario.Controls.Add(this.lbTitulo);
-            this.pnTituloFuncionario.Location = new System.Drawing.Point(0, 0);
-            this.pnTituloFuncionario.Name = "pnTituloFuncionario";
-            this.pnTituloFuncionario.Size = new System.Drawing.Size(1008, 46);
-            this.pnTituloFuncionario.TabIndex = 136;
-            // 
-            // lbTitulo
-            // 
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitulo.Location = new System.Drawing.Point(400, 9);
-            this.lbTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(233, 29);
-            this.lbTitulo.TabIndex = 65;
-            this.lbTitulo.Text = "Relatorio de Produtos";
-            // 
             // gbDataLancamento
             // 
             this.gbDataLancamento.Controls.Add(this.dtpfim);
@@ -369,7 +351,8 @@ namespace manganosekai
             this.gbDataLancamento.Controls.Add(this.label1);
             this.gbDataLancamento.Controls.Add(this.label2);
             this.gbDataLancamento.Enabled = false;
-            this.gbDataLancamento.Location = new System.Drawing.Point(33, 523);
+            this.gbDataLancamento.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbDataLancamento.Location = new System.Drawing.Point(22, 514);
             this.gbDataLancamento.Name = "gbDataLancamento";
             this.gbDataLancamento.Size = new System.Drawing.Size(206, 74);
             this.gbDataLancamento.TabIndex = 140;
@@ -378,25 +361,27 @@ namespace manganosekai
             // 
             // dtpfim
             // 
+            this.dtpfim.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpfim.Location = new System.Drawing.Point(43, 44);
             this.dtpfim.Name = "dtpfim";
-            this.dtpfim.Size = new System.Drawing.Size(103, 20);
+            this.dtpfim.Size = new System.Drawing.Size(103, 22);
             this.dtpfim.TabIndex = 47;
             // 
             // dtpini
             // 
+            this.dtpini.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpini.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpini.Location = new System.Drawing.Point(33, 18);
+            this.dtpini.Location = new System.Drawing.Point(43, 21);
             this.dtpini.Name = "dtpini";
-            this.dtpini.Size = new System.Drawing.Size(103, 20);
+            this.dtpini.Size = new System.Drawing.Size(103, 22);
             this.dtpini.TabIndex = 46;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 19);
@@ -416,25 +401,46 @@ namespace manganosekai
             // 
             // reportViewer
             // 
+            this.reportViewer.BorderStyle = System.Windows.Forms.BorderStyle.None;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.classProdutoBindingSource;
             this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "manganosekai.ReportProdutoTable.rdlc";
-            this.reportViewer.Location = new System.Drawing.Point(294, 62);
+            this.reportViewer.Location = new System.Drawing.Point(251, 53);
             this.reportViewer.Name = "reportViewer";
             this.reportViewer.ServerReport.BearerToken = null;
-            this.reportViewer.Size = new System.Drawing.Size(666, 698);
+            this.reportViewer.Size = new System.Drawing.Size(847, 698);
             this.reportViewer.TabIndex = 147;
             // 
             // classFuncionarioBindingSource
             // 
             this.classFuncionarioBindingSource.DataSource = typeof(manganosekai.classFuncionario);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(222)))), ((int)(((byte)(174)))));
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1105, 27);
+            this.statusStrip1.TabIndex = 148;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(183, 22);
+            this.toolStripStatusLabel1.Text = "Relatório de produto";
+            // 
             // formRelProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 807);
+            this.ClientSize = new System.Drawing.Size(1105, 765);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.reportViewer);
             this.Controls.Add(this.gbDataLancamento);
             this.Controls.Add(this.btSair);
@@ -446,7 +452,6 @@ namespace manganosekai
             this.Controls.Add(this.gbEditora);
             this.Controls.Add(this.gbEstoque);
             this.Controls.Add(this.gbStatus);
-            this.Controls.Add(this.pnTituloFuncionario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formRelProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -463,12 +468,13 @@ namespace manganosekai
             this.gbEstoque.PerformLayout();
             this.gbStatus.ResumeLayout(false);
             this.gbStatus.PerformLayout();
-            this.pnTituloFuncionario.ResumeLayout(false);
-            this.pnTituloFuncionario.PerformLayout();
             this.gbDataLancamento.ResumeLayout(false);
             this.gbDataLancamento.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classFuncionarioBindingSource)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -494,8 +500,6 @@ namespace manganosekai
         private System.Windows.Forms.GroupBox gbStatus;
         private System.Windows.Forms.RadioButton rbInativo;
         private System.Windows.Forms.RadioButton rbAtivo;
-        private System.Windows.Forms.Panel pnTituloFuncionario;
-        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.TextBox tbPrecoFim;
         private System.Windows.Forms.TextBox tbPrecoIni;
         private System.Windows.Forms.GroupBox gbDataLancamento;
@@ -506,5 +510,7 @@ namespace manganosekai
         private System.Windows.Forms.BindingSource classProdutoBindingSource;
         private System.Windows.Forms.BindingSource classFuncionarioBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }

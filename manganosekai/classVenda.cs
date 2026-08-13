@@ -34,7 +34,7 @@ namespace manganosekai
 
         public bool CadastrarVenda()
         {
-            string sql = $"INSERT INTO venda VALUES(0,NOW(),'{forma_pagamento}',{desconto.ToString().Replace(",",".")}, {valor_total.ToString().Replace(",",",")},'{observacao}',{cod_cliente},{cod_funcionario});SELECT LAST_INSERT_ID()";
+            string sql = $"INSERT INTO venda VALUES(0,NOW(),'{forma_pagamento}',{desconto.ToString().Replace(",",".")}, {valor_total.ToString().Replace(",",".")},'{observacao}',{cod_cliente},{cod_funcionario});SELECT LAST_INSERT_ID()";
             classConexao cConexao = new classConexao();
 
             cod_venda = 0;

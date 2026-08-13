@@ -68,7 +68,7 @@ namespace manganosekai
         public DataTable consultarCategoriaData(DateTime dtcadastro)
         {
 
-            string sql = $"SELECT categoria.cod_categoria AS Codigo, categoria.nome AS categoria, categoria.status AS Status, categoria.descricao as Descricao, categoria.data_cadastro AS 'Data Cadastro' FROM categoria  WHERE categoria.data_cadastro = '{dtcadastro.ToString("yyyy-MM-dd")}'";
+            string sql = $"SELECT categoria.cod_categoria AS Codigo, categoria.nome AS categoria, categoria.status AS Status, categoria.descricao as Descricao, categoria.data_cadastro AS 'Data Cadastro' FROM categoria  WHERE DATE(categoria.data_cadastro) = '{dtcadastro.ToString("yyyy-MM-dd")}'";
             classConexao cConexao = new classConexao();
             return cConexao.RetornaDados(sql);
         }

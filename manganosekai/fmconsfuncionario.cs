@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +19,7 @@ namespace manganosekai
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja fechar o formulário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -90,6 +90,32 @@ namespace manganosekai
         {
 
         }
+        public Point downPoint = Point.Empty;
+        protected override void OnLoad(EventArgs e)
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+            {
+                MouseDown += new MouseEventHandler(Form_MouseDown);
+                MouseMove += new MouseEventHandler(Form_MouseMove);
+                MouseUp += new MouseEventHandler(Form_MouseUp);
+            }
+            base.OnLoad(e);
+        }
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+        private void Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            downPoint = Point.Empty;
+        }
+
 
         private void cboxopcoes_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -289,7 +315,7 @@ namespace manganosekai
             //Usando o evento CellContentClick (TEM QUE CLICAR NO CONTEUDO(texto))
 
             //Perguntar para usuario se realmente deseja alterar o funcionario selecionado
-            if(MessageBox.Show("Deseja alterar ou excluir o funcionario selecionado?","Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+            if(MessageBox.Show("Deseja alterar ou excluir o funcionário selecionado?","Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
             {
                 classFuncionario cfuncionario = new classFuncionario();
                 //Instanciar a classe funcionario
@@ -303,7 +329,7 @@ namespace manganosekai
                 objfmcfuncionarios.tbcodfunc.Text = cfuncionario.cod_funcionario.ToString();
                 objfmcfuncionarios.tbnomefuncionario.Text = cfuncionario.nome.ToString();
                 objfmcfuncionarios.tbnomesocial.Text = cfuncionario.nome_social.ToString();
-                objfmcfuncionarios.mtbdatanascimento.Text = cfuncionario.data_nascimento.ToString();
+                objfmcfuncionarios.dtpnascimento.Value = cfuncionario.data_nascimento.Date;
 
 
                 // Sexo
@@ -374,7 +400,7 @@ namespace manganosekai
             }
             else
             {
-                MessageBox.Show("Não há usuarios cadastro com esse filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Não há funcionários cadastrados com esses filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -387,6 +413,14 @@ namespace manganosekai
         private void cboxcidade_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btvoltar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

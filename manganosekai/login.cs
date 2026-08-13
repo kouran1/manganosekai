@@ -24,6 +24,7 @@ namespace manganosekai
 
         }
 
+
         private void btn_login_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tb_user.Text) || string.IsNullOrWhiteSpace(tb_password.Text))
@@ -37,7 +38,12 @@ namespace manganosekai
                 if (cFuncionario.loginUser(tb_user.Text, tb_password.Text))
                 {
                     fmcprincipal fprincipal = new fmcprincipal();
-                    fprincipal.statuslbmensagem.Text = $"Bem vindo, {tb_user.Text.ToUpper()}";
+                    
+
+                    int tipo_a;
+                    tipo_a = cFuncionario.tipo_acesso;
+                   fprincipal.statuslbmensagem.Text = $"Bem-vindo, {tb_user.Text.ToUpper()}";
+                    fprincipal.tipo_acesso = tipo_a;
                     fprincipal.Show();
                     this.Hide();
 
@@ -45,7 +51,7 @@ namespace manganosekai
                 }
                 else
                 {
-                    MessageBox.Show("Usuário ou senha incorreta", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Usuário ou senha incorretos", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     tb_password.Clear();
                     tb_user.BackColor = Color.PaleVioletRed;
                     tb_password.BackColor = Color.PaleVioletRed;
@@ -75,7 +81,10 @@ namespace manganosekai
 
         private void btn_sair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

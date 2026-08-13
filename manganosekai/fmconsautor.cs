@@ -19,7 +19,7 @@ namespace manganosekai
 
         private void dgvCargo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(MessageBox.Show("Deseja alterar ou excluir o funcionario selecionado?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if(MessageBox.Show("Deseja alterar ou excluir o autor selecionado?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
 
@@ -27,13 +27,13 @@ namespace manganosekai
             }
             else
             {
-                MessageBox.Show("Não há usuarios cadastro com esse filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Não há autores cadastrados com esses filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja fechar o formulário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
@@ -146,8 +146,23 @@ namespace manganosekai
             }
             else
             {
-                MessageBox.Show("Não há usuarios cadastro com esse filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Não há autores cadastrados com esses filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btvoltar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
+
+
+        }
+
+        private void gbConsFuncionario_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

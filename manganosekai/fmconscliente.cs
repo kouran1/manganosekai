@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -110,6 +110,32 @@ namespace manganosekai
 
             }
         }
+        public Point downPoint = Point.Empty;
+        protected override void OnLoad(EventArgs e)
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+            {
+                MouseDown += new MouseEventHandler(Form_MouseDown);
+                MouseMove += new MouseEventHandler(Form_MouseMove);
+                MouseUp += new MouseEventHandler(Form_MouseUp);
+            }
+            base.OnLoad(e);
+        }
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+        private void Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            downPoint = Point.Empty;
+        }
+
 
 
         private void gbConsFuncionario_Enter(object sender, EventArgs e)
@@ -260,7 +286,7 @@ namespace manganosekai
                 objfmccliente.tbcod.Text = cCliente.cod_cliente.ToString();
                 objfmccliente.tbnomecliente.Text = cCliente.nome.ToString();
                 objfmccliente.tbnomesocial.Text = cCliente.nome_social.ToString();
-                objfmccliente.mtbdatanascimento.Text = cCliente.data_nascimento.ToString();
+                objfmccliente.dtpnascimento.Value = cCliente.data_nascimento.Date;
                 if (cCliente.sexo == "M")
                 {
                     objfmccliente.rbmasculino.Checked = true;
@@ -301,7 +327,7 @@ namespace manganosekai
             }
             else
             {
-                MessageBox.Show("Não há clientes cadastro com esse filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Não há clientes cadastrados com esses filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -313,13 +339,21 @@ namespace manganosekai
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja sair desse formulario", "Mangá no Sekai", MessageBoxButtons.YesNo, MessageBoxIcon.Question) ==  DialogResult.Yes)
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
             else
             {
 
+            }
+        }
+
+        private void btvoltar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }

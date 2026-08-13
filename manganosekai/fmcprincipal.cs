@@ -22,9 +22,26 @@ namespace manganosekai
 
         }
 
+
+        public int tipo_acesso;
+        
+
+
         private void fmcprincipal_Load(object sender, EventArgs e)
         {
-            fmcprincipal cprincipal = new fmcprincipal();
+            if(tipo_acesso == 0)
+            {
+                menucadcargo.Enabled = false;
+                menucadfuncionario.Enabled = false;
+                tslTipoAcesso.Text = $"Tipo de Acesso: Comum";
+            }
+            else
+            {
+                tslTipoAcesso.Text = $"Tipo de Acesso: Administrador";
+            }
+
+            
+
         }
 
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
@@ -53,7 +70,7 @@ namespace manganosekai
         {
             if(Application.OpenForms.OfType<fmcfuncionarios>().Count() > 0)
             {
-                MessageBox.Show("Cadastro de funcionarios já está aberto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Cadastro de funcionários já está aberto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -78,7 +95,7 @@ namespace manganosekai
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja sair do sistema?", "Mangá No Sekai", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -120,7 +137,7 @@ namespace manganosekai
         {
             if(Application.OpenForms.OfType<fmconsfuncionario>().Count() > 0)
             {
-                MessageBox.Show("Consulta de funcionarios já está aberto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Consulta de funcionários já está aberta", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -164,7 +181,7 @@ namespace manganosekai
         {
             if (Application.OpenForms.OfType<formRelFuncionario>().Count() > 0)
             {
-                MessageBox.Show("Relatorio de funcionarios já está aberto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Relatório de funcionários já está aberto", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             else
@@ -176,6 +193,8 @@ namespace manganosekai
 
         private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            fmconsproduto formConsProduto = new fmconsproduto();
+            formConsProduto.Show();
             
         }
 
@@ -189,6 +208,18 @@ namespace manganosekai
         {
             formVenda52 cVenda = new formVenda52();
             cVenda.Show();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formRelVendaDetalhada formrelvendad = new formRelVendaDetalhada();
+            formrelvendad.Show();
+        }
+
+        private void clienteToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formRelCliente objRelCliente = new formRelCliente();
+            objRelCliente.Show();
         }
     }
 }

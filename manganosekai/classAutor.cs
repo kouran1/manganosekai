@@ -53,7 +53,13 @@ namespace manganosekai
         //Consultas
         public DataTable buscarautor()
         {
-            string sql = "SELECT cod_autor, nome FROM autor WHERE status = 1 ORDER BY nome;";
+            string sql = "SELECT cod_autor as Código,nome as Autor, nacionalidade as Nacionalidade FROM autor WHERE status = 1 ORDER BY nome;";
+            classConexao cConexao = new classConexao();
+            return cConexao.RetornaDados(sql);
+        }
+        public DataTable buscarAutor02()
+        {
+            string sql = "SELECT cod_autor as Código, nome as Autor, nacionalidade AS Nacionalidade, descricao AS Descrição, status as Status, data_cadastro AS 'Data de Cadastro' FROM autor WHERE status = 1 ORDER BY Código";
             classConexao cConexao = new classConexao();
             return cConexao.RetornaDados(sql);
         }
@@ -74,7 +80,7 @@ namespace manganosekai
         public DataTable consultarAutorData(DateTime dtcadastro)
         {
 
-            string sql = $"SELECT cod_autor, nome, nacionalidade, descricao, status, data_cadastro FROM autor WHERE data_cadastro = '{dtcadastro.ToString("yyyy-MM-dd")}'";
+            string sql = $"SELECT cod_autor, nome, nacionalidade, descricao, status, data_cadastro FROM autor WHERE DATE(data_cadastro) = '{dtcadastro.ToString("yyyy-MM-dd")}'";
             classConexao cConexao = new classConexao();
             return cConexao.RetornaDados(sql);
         }
@@ -109,6 +115,20 @@ namespace manganosekai
             {
                 return false;
             }
+        }
+        public DataTable carregarAutor()
+        {
+            string sql = $"SELECT cod_autor, nome FROM autor WHERE status = 1 ORDER BY cod_autor";
+
+            classConexao cConexao = new classConexao();
+            return cConexao.RetornaDados(sql);
+        }
+
+        public DataTable buscarautorGrid()
+        {
+            string sql = "SELECT cod_autor as Código, nome as Autor FROM autor WHERE status = 1 ORDER BY nome;";
+            classConexao cConexao = new classConexao();
+            return cConexao.RetornaDados(sql);
         }
 
 

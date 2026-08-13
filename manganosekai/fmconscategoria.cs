@@ -24,11 +24,37 @@ namespace manganosekai
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Deseja fechar o formulário?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja sair?", "Atenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
             }
         }
+        public Point downPoint = Point.Empty;
+        protected override void OnLoad(EventArgs e)
+        {
+            if (FormBorderStyle == FormBorderStyle.None)
+            {
+                MouseDown += new MouseEventHandler(Form_MouseDown);
+                MouseMove += new MouseEventHandler(Form_MouseMove);
+                MouseUp += new MouseEventHandler(Form_MouseUp);
+            }
+            base.OnLoad(e);
+        }
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                downPoint = new Point(e.X, e.Y);
+        }
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (downPoint != Point.Empty)
+                Location = new Point(Left + e.X - downPoint.X, Top + e.Y - downPoint.Y);
+        }
+        private void Form_MouseUp(object sender, MouseEventArgs e)
+        {
+            downPoint = Point.Empty;
+        }
+
 
         private void fmconscategoria_Load(object sender, EventArgs e)
         {
@@ -118,7 +144,7 @@ namespace manganosekai
                 objCategoria.tbcodcategoria.Text = cCategoria.cod_categoria.ToString();
                 objCategoria.tbcategoria.Text = cCategoria.nome.ToString();
                 objCategoria.tboxdescricao.Text = cCategoria.descricao.ToString();
-                objCategoria.lbdata.Text = cCategoria.data_cadastro.ToString() ;
+                objCategoria.lbdata.Text = cCategoria.data_cadastro.ToString("dd/MM/yyyy HH:mm");
 
                 if (cCategoria.status == 1)
                 {
@@ -136,8 +162,13 @@ namespace manganosekai
             }
             else
             {
-                MessageBox.Show("Não há usuarios cadastro com esse filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Não há categorias cadastradas com esses filtros", "Mangá no Sekai", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btvoltar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
